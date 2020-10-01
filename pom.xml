@@ -26,7 +26,7 @@
                             <verbose>true</verbose>
                             <dump>true</dump>
                             <lexDefinitions>
-                                <lexDefinition>src/main/java/Principal/Jflex.flex</lexDefinition>
+                                <lexDefinition>src/main/java/PaqueteFlex/Jflex.flex</lexDefinition>
                             </lexDefinitions>
                             <outputDirectory>src/main/java</outputDirectory>
                         </configuration>

@@ -2,34 +2,64 @@ package Principal;
 
 %%
 
-%class Decimales
+%class AnalizadorLexico
 %standalone 
 %line
 %column
 
 
-Oct=[0-7]
-punto = "."
-O = "o"
-NoOc= [7-9]
+/*%  PALABRAS RESERVADAS  */
 
-/*Octales Entero*/
-OCTAL = {Oct}+{O}
-NoOc = ({O}+{Oct}+{O} | {O}+{NoOc}+{Oct}+{O})
+    clase = "Clase"
+    propiedades = "Propiedades"
+    metodos = "Metodos"
+    tipo_propiedades_metodos = "Publicas"|"Publicos"|"Privadas"|"Privados"|"Protegidos"|"Protegidas"
 
-/*Octales Decimal*/
-OCTALD = {Oct}+{punto}{Oct}+{O}
-NoOc = ({Oct}+{punto}{Oct}+{O}+ | {O}{Oct}+{punto}{Oct}+{O}+ | {Oct}+{punto}+{Oct}+{O})
+    /*%  PALABRAS RESERVADAS TIPOS DATO Y FUNCIONES */
+
+    tipo_entero = "entero"
+    tipo_cadena = "cadena"
+    tipo_real = "real"
+    tipo_booleano = "booleano"
+    tipo_nulo = "nulo"
+
+    /*%  PALABRAS RESERVADAS DE IFS */
+
+    if = "si"|"Si"
+    entonces = "entonces"|"Entonces"
+    sino = "sino"|"Sino"
+    /*%  PALABRAS RESERVADAS LECTURA Y ESCRITURA */
+
+    leer = "Leer"|"leer"
+    escribir = "Escribir"|"escribir"
+    /*%  PALABRAS RESERVADAS CICLO, FUNCIONES, ETC */
+
+    devolver = "devolver"
+    constructor = "Constructor"|"constructor"
+    destructor = "Destructor"|"destructor"
+    principal = "principal"|"Principal"
+    instanciar = "instanciar"
+    desde = "desde"|"Desde"
+    mientras = "mientras"|"Mientras"
+    incrementar = "incrementar"|"Incrementar"
+    decrementar = "decrementar"|"Decrementar"
+    hacer = "hacer"|"Hacer"
+    extiende = "extiende"|"Extiende"
+    eliminar ="Eliminar"|"eliminar"
+    incluir = "incluir"|"Incluir"
+    nuevo = "nuevo"
+
+    /*%   TIPOS DE DATOS  */
+
+    numerosDecimales = [1-9][0-9]* | 0
+    numerosReales = [0-9]*[.][0-9]+[1-9]
+    booleano = "verdadero"|"falso"
+    cadena = ["\""]([a-zA-Z]*[0-9]*["\ "]*)*["\""]
+    comentarios = ["#"]([a-zA-Z]*[0-9]*["\ "]*["="]*["+"]*["-"]*["*"]*["/"]*["%"]*["."]*["_"]*["("]*[")"]*["["]*["]"]*)*
 
 %%
 
-{OCTAL} {
+{clase} {
                 System.out.println("NUMERO BINARIO ENTERO " + yytext());
-            }
-{NoOc} {
-                System.out.println("NUMERO BINARIO ENTERO " + yytext());
-            }
-{OCTALD} {
-                System.out.println("NUMERO BINARIO DECIMAL " + yytext());
             }
 . {}
