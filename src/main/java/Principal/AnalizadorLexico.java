@@ -62,11 +62,13 @@ class AnalizadorLexico {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\12\0\4\1\22\0\1\2\3\0\1\3\1\2\2\0"+
-    "\4\2\1\0\15\2\3\0\1\2\3\0\2\2\1\4"+
-    "\30\2\1\0\1\2\1\0\1\2\1\0\1\5\3\2"+
-    "\1\6\6\2\1\7\6\2\1\10\7\2\12\0\1\1"+
-    "\u01a2\0\2\1\326\0\u0100\1";
+    "\11\0\1\1\1\2\2\3\1\4\22\0\1\5\1\6"+
+    "\1\7\1\0\1\10\1\11\2\0\3\11\1\12\1\1"+
+    "\1\13\1\14\1\11\1\15\11\16\1\1\1\0\1\1"+
+    "\1\17\1\1\2\0\32\20\1\11\1\0\1\11\1\0"+
+    "\1\21\1\0\15\22\1\23\14\22\1\0\1\24\10\0"+
+    "\1\3\105\0\1\25\u0154\0\1\26\7\0\2\3\326\0"+
+    "\u0100\3";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[1024];
@@ -93,10 +95,11 @@ class AnalizadorLexico {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\1\1\3\0\1\4";
+    "\1\0\1\1\1\2\1\3\2\2\3\1\10\2\1\1"+
+    "\3\0\1\4\4\0\1\2\1\0\1\2";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[9];
+    int [] result = new int[29];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -121,11 +124,13 @@ class AnalizadorLexico {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\11\0\11\0\22\0\33\0\44\0\55\0\66"+
-    "\0\11";
+    "\0\0\0\27\0\27\0\27\0\56\0\105\0\134\0\163"+
+    "\0\212\0\241\0\270\0\317\0\346\0\375\0\134\0\u0114"+
+    "\0\u012b\0\u0142\0\u0159\0\163\0\212\0\27\0\u0170\0\317"+
+    "\0\346\0\u0187\0\u0187\0\u019e\0\u0170";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[9];
+    int [] result = new int[29];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -148,12 +153,20 @@ class AnalizadorLexico {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\2\1\4\1\5\4\2\13\0\1\4"+
-    "\1\0\5\4\7\0\1\6\6\0\1\7\13\0\1\10"+
-    "\6\0\1\11\2\0";
+    "\1\2\2\3\1\4\1\5\1\6\1\7\1\10\1\11"+
+    "\1\3\1\12\1\13\1\14\1\15\1\16\1\17\1\20"+
+    "\1\2\2\21\1\3\1\22\1\2\31\0\1\3\20\0"+
+    "\1\3\10\0\1\23\40\0\1\3\14\0\1\24\1\0"+
+    "\1\3\5\0\2\24\1\0\1\24\1\0\2\24\10\0"+
+    "\1\25\2\0\1\26\13\25\15\0\1\3\27\0\1\3"+
+    "\30\0\2\27\24\0\1\30\2\31\24\0\1\30\2\16"+
+    "\25\0\2\20\1\0\1\20\1\32\3\20\17\0\2\21"+
+    "\1\0\1\21\1\33\3\21\30\0\1\3\5\0\1\34"+
+    "\36\0\1\27\1\35\25\0\2\33\1\0\1\33\1\0"+
+    "\3\33\7\0\1\3\21\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[63];
+    int [] result = new int[437];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -196,10 +209,11 @@ class AnalizadorLexico {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\2\1\3\0\1\11";
+    "\1\0\3\11\16\1\3\0\1\11\4\0\1\1\1\0"+
+    "\1\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[9];
+    int [] result = new int[29];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -670,22 +684,22 @@ class AnalizadorLexico {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
-            { 
+            { System.err.println("Error Léxico \"" + yytext() + "\" ["+ (yyline+1) + ":"+ (yycolumn+1) + ":"+ yychar + "]");
             }
             // fall through
           case 5: break;
           case 2:
-            { System.out.print(yytext());
+            { 
             }
             // fall through
           case 6: break;
           case 3:
-            { System.out.println("COMENTARIO" + yytext());
+            { System.out.print(yytext());
             }
             // fall through
           case 7: break;
           case 4:
-            { System.out.println("NUMERO BINARIO ENTERO " + yytext());
+            { System.out.println("COMENTARIO");
             }
             // fall through
           case 8: break;

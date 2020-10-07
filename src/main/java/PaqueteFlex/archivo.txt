@@ -1,4 +1,5 @@
 Clase Impar
+    $COMENTARIO$
     Propiedades Publicas:
         entero a
         cadena b
@@ -9,7 +10,7 @@ Clase Impar
 		cadena raizCuadrada(entero r)
     		real root = raiz(r)
 			devolver root
-$fadfasdfas
+$$
 entero Principal()
     b = 5
     devolver 0
