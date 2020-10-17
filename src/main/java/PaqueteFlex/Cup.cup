@@ -1,0 +1,12 @@
+package Principal;
+import java_cup.runtime.Symbol;
+
+terminal PROPIEDADES, METODO, CLASE, P;
+non terminal S , M;
+start with S;
+
+//    Clase PROPIEDAD O CLASE ();
+S ::= CLASE M 
+    | CLASE  {: System.out.println("SYM: ENCONRE UNA CLASE"); :};
+
+M ::= METODO {: System.out.println("SYM: ENCONRE UNA CLASE METODO"); :}| PROPIEDADES {: System.out.println("SYM: ENCONRE UNA CLASE PROPIEDADES"); :};
