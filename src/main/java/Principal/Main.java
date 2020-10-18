@@ -7,6 +7,7 @@ package Principal;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java_cup.runtime.Scanner;
 
@@ -24,12 +25,9 @@ public class Main {
             AnalizadorLexico lex = new AnalizadorLexico(new FileReader("Codigo.txt"));  
             Sintactico sintactico = new Sintactico((Scanner) lex);
             sintactico.parse();
-
-            /*
-            ArrayList <Simbolo> sim = lex.sim;
-            EscribirFichero es = new EscribirFichero();
+            ArrayList <Simbolos> sim = lex.sim;
+            EscribirenFichero es = new EscribirenFichero();
             es.escribir(sim);
-*/
         } catch (FileNotFoundException ex) {
             System.out.println("entro");
             java.util.logging.Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
