@@ -31,8 +31,27 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.github.vbmacher</groupId>
+                <artifactId>cup-maven-plugin</artifactId>
+                <version>11b-20160615</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <className>Sintactico</className>
+                    <symbolsName>sym</symbolsName>
+                    <cupDefinition>src\main\java\PaqueteFlex\Cup.cup</cupDefinition>
+                    <outputDirectory>src\main\java</outputDirectory>
+                    <noSummary>true</noSummary>
+                    <debug>true</debug>
+                </configuration>
+            </plugin>
         </plugins>
-        <!-- ... -->
     </build>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/de.jflex/jflex -->
