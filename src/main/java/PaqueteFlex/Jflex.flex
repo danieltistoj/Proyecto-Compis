@@ -467,23 +467,23 @@ public void add(String nuevo) {
     {propiedades}
         {  
             this.add("PROPIEDADES"); 
-            return new Symbol(sym.PROPIEDADES);
+            return new Symbol(sym.PROPIEDAD);
         }
 
     {metodos}
         {  
             this.add("METODOS");
-            return new Symbol(sym.METODO);
+            
         }
 
     {tipo_de_metodos}
         {  
             this.add("TIPO DE PROPIEDAD"); 
-            return new Symbol(sym.TIPO_DE_METODOS);
+            
         }
     {tipo_clase} 
         { 
-         return new Symbol(sym.TIPO_CLASE);
+         
         }
     {booleano}
         {  
@@ -512,7 +512,8 @@ public void add(String nuevo) {
 
     {variables_clase}
         {  
-            this.add("VARIABLE CLASE"); 
+            this.add("VARIABLE CLASE");
+            return new Symbol(sym.VARIABLE);
         }
 
     {excepciones_variables}
@@ -527,7 +528,7 @@ public void add(String nuevo) {
 
     {findelinea}     
         {  
-            return new Symbol(sym.NUEVA_LINEA);
+          
         }
 
     {ignorar}     

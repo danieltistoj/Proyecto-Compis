@@ -31,9 +31,9 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\006\000\002\002\004\000\002\002\006\000\002\004" +
-    "\004\000\002\004\003\000\002\003\006\000\002\003\006" +
-    "" });
+    "\000\007\000\002\002\004\000\002\002\003\000\002\003" +
+    "\004\000\002\003\003\000\002\004\004\000\002\004\006" +
+    "\000\002\006\005" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -41,16 +41,13 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\022\000\004\006\005\001\002\000\004\002\024\001" +
-    "\002\000\004\007\006\001\002\000\004\010\007\001\002" +
-    "\000\010\004\014\005\010\010\012\001\002\000\004\011" +
-    "\021\001\002\000\004\002\000\001\002\000\010\004\014" +
-    "\005\010\010\012\001\002\000\004\002\ufffe\001\002\000" +
-    "\004\011\015\001\002\000\004\012\016\001\002\000\004" +
-    "\012\017\001\002\000\004\002\ufffc\001\002\000\004\002" +
-    "\uffff\001\002\000\004\012\022\001\002\000\004\012\023" +
-    "\001\002\000\004\002\ufffd\001\002\000\004\002\001\001" +
-    "\002" });
+    "\000\015\000\004\004\007\001\002\000\004\002\017\001" +
+    "\002\000\004\002\000\001\002\000\006\002\ufffe\004\007" +
+    "\001\002\000\004\005\010\001\002\000\010\002\ufffd\004" +
+    "\ufffd\006\011\001\002\000\004\010\014\001\002\000\002" +
+    "\001\002\000\006\002\ufffc\004\ufffc\001\002\000\004\011" +
+    "\015\001\002\000\002\001\002\000\004\002\uffff\001\002" +
+    "\000\004\002\001\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -58,13 +55,12 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\022\000\004\002\003\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\006\003\012\004\010" +
-    "\001\001\000\002\001\001\000\002\001\001\000\006\003" +
-    "\012\004\017\001\001\000\002\001\001\000\002\001\001" +
+    "\000\015\000\010\002\003\003\004\004\005\001\001\000" +
+    "\002\001\001\000\002\001\001\000\006\003\015\004\005" +
+    "\001\001\000\002\001\001\000\004\006\011\001\001\000" +
+    "\002\001\001\000\004\007\012\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\002\001\001" });
+    "\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -141,47 +137,56 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 1: // S ::= CLASE TIPO_CLASE NUEVA_LINEA FIN_LINEA 
+          case 1: // S ::= CLASE_GENERAL 
             {
               Object RESULT =null;
-		 System.out.println("SYM: ENCONRE UNA CLASE"); 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 2: // FIN_LINEA ::= NUEVA_LINEA FIN_LINEA 
+          case 2: // CLASE_GENERAL ::= CLASE_PARTICULAR CLASE_GENERAL 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("FIN_LINEA",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CLASE_GENERAL",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 3: // FIN_LINEA ::= METODOS 
+          case 3: // CLASE_GENERAL ::= CLASE_PARTICULAR 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("FIN_LINEA",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CLASE_GENERAL",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 4: // METODOS ::= METODO TIPO_DE_METODOS DOS_PUNTOS DOS_PUNTOS 
+          case 4: // CLASE_PARTICULAR ::= CLASE VARIABLE 
             {
               Object RESULT =null;
-		 System.out.println("SYM: ENCONRE UNA CLASE METODO"); 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("METODOS",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CLASE_PARTICULAR",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 5: // METODOS ::= PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS DOS_PUNTOS 
+          case 5: // CLASE_PARTICULAR ::= CLASE VARIABLE PROPIEDAD_CLASE METODO_CLASE 
             {
               Object RESULT =null;
-		 System.out.println("SYM: ENCONRE UNA CLASE PROPIEDADES"); 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("METODOS",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+		System.out.println("SYM: CLASE PARTICULAR"); 
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CLASE_PARTICULAR",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 6: // PROPIEDAD_CLASE ::= PROPIEDAD TIPO_DE_METODOS DOS_PUNTOS 
+            {
+              Object RESULT =null;
+		System.out.println("SYM: PROPIEDAD_CLASE"); 
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("PROPIEDAD_CLASE",4, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 

@@ -8,25 +8,25 @@ package Principal;
 /** CUP generated interface containing symbol constants. */
 public interface sym {
   /* terminals */
-  public static final int TIPO_CLASE = 5;
+  public static final int VARIABLE = 3;
   public static final int EOF = 0;
-  public static final int TIPO_DE_METODOS = 7;
-  public static final int CLASE = 4;
-  public static final int PROPIEDADES = 2;
-  public static final int NUEVA_LINEA = 6;
+  public static final int TIPO_DE_METODOS = 6;
+  public static final int CLASE = 2;
   public static final int error = 1;
-  public static final int DOS_PUNTOS = 8;
-  public static final int METODO = 3;
+  public static final int DOS_PUNTOS = 7;
+  public static final int METODO = 5;
+  public static final int TIPO_VARIABLE = 8;
+  public static final int PROPIEDAD = 4;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
-  "PROPIEDADES",
-  "METODO",
   "CLASE",
-  "TIPO_CLASE",
-  "NUEVA_LINEA",
+  "VARIABLE",
+  "PROPIEDAD",
+  "METODO",
   "TIPO_DE_METODOS",
-  "DOS_PUNTOS"
+  "DOS_PUNTOS",
+  "TIPO_VARIABLE"
   };
 }
 
