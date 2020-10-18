@@ -81,6 +81,7 @@ public void add(String nuevo) {
     propiedades = "Propiedades"
     metodos = "Metodos"
     tipo_de_metodos = "Publica"|"Publico"|"Privada"|"Privados"|"Protegidos"|"Protegidas"
+    tipo_clase = "Impar"|"Par"
 
     /*  PALABRAS RESERVADAS TIPOS DATO Y FUNCIONES */
 
@@ -270,6 +271,7 @@ public void add(String nuevo) {
     {dosPuntos}
         {   
             this.add("DOS PUNTOS");
+            return new Symbol(sym.DOS_PUNTOS);
         }
 
     {distintoQue}
@@ -477,8 +479,12 @@ public void add(String nuevo) {
     {tipo_de_metodos}
         {  
             this.add("TIPO DE PROPIEDAD"); 
+            return new Symbol(sym.TIPO_DE_METODOS);
         }
-
+    {tipo_clase} 
+        { 
+         return new Symbol(sym.TIPO_CLASE);
+        }
     {booleano}
         {  
             this.add("TIPO BOOLEANO"); 
@@ -521,7 +527,7 @@ public void add(String nuevo) {
 
     {findelinea}     
         {  
-            //this.tabulacion = 0;
+            return new Symbol(sym.NUEVA_LINEA);
         }
 
     {ignorar}     

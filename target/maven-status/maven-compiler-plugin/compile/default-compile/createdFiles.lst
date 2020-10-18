@@ -2,4 +2,5 @@ Principal\sym.class
 Principal\AnalizadorLexico.class
 Principal\Sintactico$CUP$Sintactico$actions.class
 Principal\Sintactico.class
+Principal\Main.class
 Principal\Simbolos.class
