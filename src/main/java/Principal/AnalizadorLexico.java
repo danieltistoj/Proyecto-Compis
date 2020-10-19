@@ -1107,7 +1107,7 @@ public void add(String nuevo) {
           case 82: break;
           case 17:
             { this.add("VARIABLE CLASE");
-            return new Symbol(sym.VARIABLE);
+            return new Symbol(sym.VARIABLE_CLASE);
             }
             // fall through
           case 83: break;
@@ -1117,7 +1117,8 @@ public void add(String nuevo) {
             // fall through
           case 84: break;
           case 19:
-            { this.add("VARIABLE");
+            { this.add("VARIABLE"); 
+            //return new Symbol(sym.VARIABLE);
             }
             // fall through
           case 85: break;
@@ -1249,11 +1250,13 @@ public void add(String nuevo) {
           case 110: break;
           case 45:
             { this.add("METODOS");
+            return new Symbol(sym.METODOS);
             }
             // fall through
           case 111: break;
           case 46:
             { this.add("TIPO DE PROPIEDAD");
+            return new Symbol(sym.TIPO_DE_METODOS);
             }
             // fall through
           case 112: break;
@@ -1330,7 +1333,7 @@ public void add(String nuevo) {
           case 126: break;
           case 61:
             { this.add("PROPIEDADES"); 
-            return new Symbol(sym.PROPIEDAD);
+            return new Symbol(sym.PROPIEDADES);
             }
             // fall through
           case 127: break;

@@ -2,7 +2,4 @@ Principal\EscribirenFichero.class
 Principal\Sintactico.class
 Principal\Simbolos.class
 Principal\sym.class
-Principal\AnalizadorLexico.class
 Principal\Sintactico$CUP$Sintactico$actions.class
-Principal\AnalizadorLexico.java~
-Principal\Main.class
