@@ -194,28 +194,32 @@ public void add(String nuevo) {
     {tipo_booleano}
         {   
           this.add("TIPO BOOLEANO ");
-          System.out.println(yytext()+(yyline+1));
+          return new Symbol(sym.TIPO_DATO);
           
         }
 
     {tipo_cadena}
         {   
             this.add("TIPO CADENA");
+            return new Symbol(sym.TIPO_DATO);
         }
 
     {tipo_entero}
         {   
             this.add("TIPO ENTERO");
+            return new Symbol(sym.TIPO_DATO);
         }
 
     {tipo_real}
         {   
             this.add("TIPO REAL");
+            return new Symbol(sym.TIPO_DATO);
         }
 
     {tipo_nulo}
         {   
             this.add("TIPO NULO");
+            
         }
 
    {raiz} 
@@ -352,16 +356,19 @@ public void add(String nuevo) {
     {coma}
         {   
             this.add("COMA");
+            return new Symbol(sym.COMA);
         }
 
     {parentesis1}
         {   
-
+            this.add("PARENTESIS (");
+            return new Symbol(sym.PARENTESIS1);
         }
 
     {parentesis2}
         {   
-
+            this.add("PARENTESIS )");
+            return new Symbol(sym.PARENTESIS2);
         }
 
     {tabulacion}
@@ -426,6 +433,7 @@ public void add(String nuevo) {
     {constructor}
         {  
             this.add("CONSTRUCTOR"); 
+            return new Symbol(sym.TIPO_DATO);
         }
 
     {devolver}
@@ -526,7 +534,7 @@ public void add(String nuevo) {
     {variables}
         {  
             this.add("VARIABLE"); 
-            //return new Symbol(sym.VARIABLE);
+            return new Symbol(sym.VARIABLE);
         }
 
     {findelinea}     

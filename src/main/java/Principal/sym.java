@@ -46,6 +46,7 @@ public interface sym {
   public static final int MODULO = 41;
   public static final int MENOS = 31;
   public static final int MAYOR_QUE = 43;
+  public static final int TIPO_DATO = 35;
   public static final int VARIABLE_CLASE = 33;
   public static final int METODOS = 4;
   public static final int TANGENTE = 50;
@@ -61,7 +62,6 @@ public interface sym {
   public static final int LEER = 8;
   public static final int HACER = 19;
   public static final int MENOR_QUE = 42;
-  public static final int TIPO_DATO_CUP = 35;
   public static final int DIVISION = 39;
   public static final int MULTIPLICACION = 38;
   public static final String[] terminalNames = new String[] {
@@ -100,7 +100,7 @@ public interface sym {
   "PUNTO",
   "VARIABLE_CLASE",
   "ELIMINAR",
-  "TIPO_DATO_CUP",
+  "TIPO_DATO",
   "SUMA",
   "RESTA",
   "MULTIPLICACION",
