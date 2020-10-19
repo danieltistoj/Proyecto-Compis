@@ -8,5 +8,6 @@ Clase Dani
     Metodos Protegidas:
     entero esImpar(entero numero, cadena numero)
     Constructor()
+    entero inicio()
 
     

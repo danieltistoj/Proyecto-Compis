@@ -36,7 +36,7 @@ public class Sintactico extends java_cup.runtime.lr_parser {
     "\000\002\007\006\000\002\007\007\000\002\005\004\000" +
     "\002\005\005\000\002\006\004\000\002\006\006\000\002" +
     "\010\006\000\002\010\007\000\002\011\007\000\002\011" +
-    "\005\000\002\011\006\000\002\011\007\000\002\011\010" +
+    "\006\000\002\011\006\000\002\011\007\000\002\011\010" +
     "" });
 
   /** Access to production table. */
@@ -45,7 +45,7 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\045\000\004\004\007\001\002\000\004\002\047\001" +
+    "\000\046\000\004\004\007\001\002\000\004\002\050\001" +
     "\002\000\004\002\000\001\002\000\006\002\ufffe\004\007" +
     "\001\002\000\004\043\010\001\002\000\010\002\ufffd\004" +
     "\ufffd\005\012\001\002\000\004\006\023\001\002\000\004" +
@@ -64,9 +64,9 @@ public class Sintactico extends java_cup.runtime.lr_parser {
     "\006\ufff3\045\026\001\002\000\010\002\uffef\004\uffef\006" +
     "\uffef\001\002\000\006\030\ufff7\031\042\001\002\000\004" +
     "\045\035\001\002\000\004\030\ufff6\001\002\000\010\002" +
-    "\ufff0\004\ufff0\006\ufff0\001\002\000\010\002\ufff2\004\ufff2" +
-    "\006\ufff2\001\002\000\004\002\uffff\001\002\000\004\002" +
-    "\001\001\002" });
+    "\ufff0\004\ufff0\006\ufff0\001\002\000\004\045\026\001\002" +
+    "\000\010\002\ufff2\004\ufff2\006\ufff2\001\002\000\004\002" +
+    "\uffff\001\002\000\004\002\001\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -74,8 +74,8 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\045\000\010\002\003\003\004\004\005\001\001\000" +
-    "\002\001\001\000\002\001\001\000\006\003\045\004\005" +
+    "\000\046\000\010\002\003\003\004\004\005\001\001\000" +
+    "\002\001\001\000\002\001\001\000\006\003\046\004\005" +
     "\001\001\000\002\001\001\000\004\007\010\001\001\000" +
     "\004\010\021\001\001\000\002\001\001\000\002\001\001" +
     "\000\004\005\014\001\001\000\004\007\020\001\001\000" +
@@ -87,8 +87,8 @@ public class Sintactico extends java_cup.runtime.lr_parser {
     "\011\043\001\001\000\002\001\001\000\002\001\001\000" +
     "\004\011\037\001\001\000\002\001\001\000\002\001\001" +
     "\000\004\006\042\001\001\000\002\001\001\000\002\001" +
-    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "" });
+    "\001\000\004\011\045\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -291,11 +291,11 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 15: // METODOS_PARTICULAR ::= TIPO_DATO PARENTESIS1 PARENTESIS2 
+          case 15: // METODOS_PARTICULAR ::= TIPO_DATO PARENTESIS1 PARENTESIS2 METODOS_PARTICULAR 
             {
               Object RESULT =null;
 
-              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("METODOS_PARTICULAR",7, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("METODOS_PARTICULAR",7, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;
 
