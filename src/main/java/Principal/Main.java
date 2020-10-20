@@ -25,9 +25,9 @@ public class Main {
             AnalizadorLexico lex = new AnalizadorLexico(new FileReader("src/main/java/PaqueteFlex/archivo.txt"));  
             Sintactico sintactico = new Sintactico((Scanner) lex);
             sintactico.parse();
-            //ArrayList <Simbolos> sim = lex.sim;
-            //EscribirenFichero es = new EscribirenFichero();
-            //es.escribir(sim);
+            ArrayList <Simbolos> sim = lex.sim;
+            EscribirenFichero es = new EscribirenFichero();
+            es.escribir(sim);
         } catch (FileNotFoundException ex) {
             System.out.println("entro");
             java.util.logging.Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

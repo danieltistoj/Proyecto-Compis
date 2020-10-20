@@ -184,11 +184,13 @@ public void add(String nuevo) {
     {punto}
         {   
             this.add("PUNTO");
+            return new Symbol(sym.SIGNOS);
         }
 
     {nuevo}
         {   
           this.add("NUEVO");  
+          return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {tipo_booleano}
@@ -225,51 +227,61 @@ public void add(String nuevo) {
    {raiz} 
         {   
             this.add("RAIZ");
+           return new Symbol(sym.FUNCION_ESPECIAL);
         }
 
     {logaritmo}
         {   
             this.add("LOGARTIMO");
+            return new Symbol(sym.FUNCION_ESPECIAL);
         }
 
     {tangente}
         {   
             this.add("TANGENTE");
+            return new Symbol(sym.FUNCION_ESPECIAL);
         }
 
     {coseno}
         {  
             this.add("COSENO");
+            return new Symbol(sym.FUNCION_ESPECIAL);
         }
 
     {seno}
         {  
             this.add("SENO");
+            return new Symbol(sym.FUNCION_ESPECIAL);
         }
 
     {cadenaBooleano}
         {   
             this.add("CADENA:BOOLEANO");
+            return new Symbol(sym.FUNCION_ESPECIAL);
         }
 
     {cadenaReal}
         {   
             this.add("CADENA:REAL");
+            return new Symbol(sym.FUNCION_ESPECIAL);
         }
 
     {cadenaEntero}
         {   
             this.add("CADENA:ENTERO");
+            return new Symbol(sym.FUNCION_ESPECIAL);
         }
 
     {corchete2}
         {   
-            
+            this.add("CORCHETE 2");
+            return new Symbol(sym.SIGNOS);
         }
 
     {corchete1}
         { 
-
+           this.add("CORCHETE 1");
+           return new Symbol(sym.SIGNOS);
         }
 
     {dosPuntos}
@@ -281,76 +293,91 @@ public void add(String nuevo) {
     {distintoQue}
         {   
             this.add("DISTINTO QUE");
+            return new Symbol(sym.SIGNOS);
         }
 
     {igualQue}
         {   
             this.add("IGUAL QUE");
+            return new Symbol(sym.SIGNOS);
         }
 
     {menorQue}
         {   
             this.add("MENOR QUE");
+            return new Symbol(sym.SIGNOS);
         }
 
     {mayorQue}
         {   
             this.add("MAYOR QUE");
+            return new Symbol(sym.SIGNOS);
         }
 
     {or}
         {  
             this.add("OR");
+            return new Symbol(sym.SIGNOS);
         }
 
     {and}
         {   
             this.add("AND");
+            return new Symbol(sym.SIGNOS);
         }
 
     {decremento}
         {   
             this.add("DECREMENTO");
+            return new Symbol(sym.SIGNOS);
         }
 
     {incremento}
         {   
             this.add("INCREMENTO");
+            return new Symbol(sym.SIGNOS);
         }
 
     {igual}
         {   
             this.add("IGUAL");
+            return new Symbol(sym.SIGNOS);
         }
 
     {exponente}
         {   
             this.add("EXPONENTE");
+            return new Symbol(sym.SIGNOS);
         }
 
     {modulo}
         {   
             this.add("MODULO");
+            return new Symbol(sym.SIGNOS);
         }
 
     {division}
         {   
             this.add("DIVISION");
+            return new Symbol(sym.SIGNOS);
         }
 
     {multiplicacion}
         {   
             this.add("MULTIPLICACION");
+            return new Symbol(sym.SIGNOS);
         }
 
     {resta}
         {   
             this.add("RESTA");
+            return new Symbol(sym.SIGNOS);
         }
 
     {suma}
         {   
             this.add("RESTA");
+            return new Symbol(sym.SIGNOS);
         }
 
     {coma}
@@ -370,6 +397,16 @@ public void add(String nuevo) {
             this.add("PARENTESIS )");
             return new Symbol(sym.PARENTESIS2);
         }
+    {falso} 
+        {
+            this.add("FALSO");
+            return new Symbol(sym.SIGNOS);
+        }
+    {verdadero} 
+        {
+           this.add("VERDADERO");
+           return new Symbol(sym.SIGNOS);
+        }
 
     {tabulacion}
         {   
@@ -379,55 +416,66 @@ public void add(String nuevo) {
     {incluir}
         {  
             this.add("INCLUIR");
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
     {eliminar}
         {   
-            this.add("ELIMINAR");
+            this.add("ELIMINAR"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {extiende}
         {  
             this.add("EXTIENDE"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {hacer}
         {  
             this.add("HACER"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {decrementar}
         {  
             this.add("DECREMAR"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {incrementar}
         {  
             this.add("INCREMENTAR"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {mientras}
         {  
             this.add("MIENTRAS"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {desde}
         {  
             this.add("DESDE"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {instanciar}
         {  
             this.add("INSTANCIAR"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {principal}
         {  
             this.add("PRINCIPAL"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {destructor}
         {  
             this.add("DESTRUCTOR"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {constructor}
@@ -439,6 +487,7 @@ public void add(String nuevo) {
     {devolver}
         {  
             this.add("DEVOLVER"); 
+            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
         }
 
     {escribir}
