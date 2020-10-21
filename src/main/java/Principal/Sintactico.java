@@ -31,11 +31,11 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\016\000\002\002\004\000\002\002\004\000\002\002" +
+    "\000\017\000\002\002\004\000\002\002\004\000\002\002" +
     "\003\000\002\003\003\000\002\003\003\000\002\003\003" +
     "\000\002\003\003\000\002\003\003\000\002\003\003\000" +
     "\002\003\003\000\002\003\003\000\002\003\003\000\002" +
-    "\003\003\000\002\003\003" });
+    "\003\003\000\002\003\003\000\002\003\003" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -43,36 +43,40 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\020\000\030\004\014\006\015\027\006\030\004\031" +
-    "\005\035\016\037\011\043\020\045\007\073\012\074\017" +
-    "\001\002\000\032\002\ufff6\004\ufff6\006\ufff6\027\ufff6\030" +
-    "\ufff6\031\ufff6\035\ufff6\037\ufff6\043\ufff6\045\ufff6\073\ufff6" +
-    "\074\ufff6\001\002\000\032\002\ufffc\004\ufffc\006\ufffc\027" +
-    "\ufffc\030\ufffc\031\ufffc\035\ufffc\037\ufffc\043\ufffc\045\ufffc" +
-    "\073\ufffc\074\ufffc\001\002\000\032\002\ufff7\004\ufff7\006" +
-    "\ufff7\027\ufff7\030\ufff7\031\ufff7\035\ufff7\037\ufff7\043\ufff7" +
-    "\045\ufff7\073\ufff7\074\ufff7\001\002\000\032\002\ufff8\004" +
-    "\ufff8\006\ufff8\027\ufff8\030\ufff8\031\ufff8\035\ufff8\037\ufff8" +
-    "\043\ufff8\045\ufff8\073\ufff8\074\ufff8\001\002\000\004\002" +
-    "\022\001\002\000\032\002\ufffa\004\ufffa\006\ufffa\027\ufffa" +
-    "\030\ufffa\031\ufffa\035\ufffa\037\ufffa\043\ufffa\045\ufffa\073" +
-    "\ufffa\074\ufffa\001\002\000\032\002\ufff5\004\ufff5\006\ufff5" +
-    "\027\ufff5\030\ufff5\031\ufff5\035\ufff5\037\ufff5\043\ufff5\045" +
-    "\ufff5\073\ufff5\074\ufff5\001\002\000\032\002\uffff\004\014" +
-    "\006\015\027\006\030\004\031\005\035\016\037\011\043" +
-    "\020\045\007\073\012\074\017\001\002\000\032\002\ufffe" +
-    "\004\ufffe\006\ufffe\027\ufffe\030\ufffe\031\ufffe\035\ufffe\037" +
-    "\ufffe\043\ufffe\045\ufffe\073\ufffe\074\ufffe\001\002\000\032" +
-    "\002\ufffd\004\ufffd\006\ufffd\027\ufffd\030\ufffd\031\ufffd\035" +
-    "\ufffd\037\ufffd\043\ufffd\045\ufffd\073\ufffd\074\ufffd\001\002" +
-    "\000\032\002\ufffb\004\ufffb\006\ufffb\027\ufffb\030\ufffb\031" +
-    "\ufffb\035\ufffb\037\ufffb\043\ufffb\045\ufffb\073\ufffb\074\ufffb" +
-    "\001\002\000\032\002\ufff4\004\ufff4\006\ufff4\027\ufff4\030" +
+    "\000\021\000\032\004\015\006\016\027\006\030\004\031" +
+    "\005\035\017\037\012\043\021\045\007\073\013\074\020" +
+    "\075\011\001\002\000\034\002\ufff6\004\ufff6\006\ufff6\027" +
+    "\ufff6\030\ufff6\031\ufff6\035\ufff6\037\ufff6\043\ufff6\045\ufff6" +
+    "\073\ufff6\074\ufff6\075\ufff6\001\002\000\034\002\ufffc\004" +
+    "\ufffc\006\ufffc\027\ufffc\030\ufffc\031\ufffc\035\ufffc\037\ufffc" +
+    "\043\ufffc\045\ufffc\073\ufffc\074\ufffc\075\ufffc\001\002\000" +
+    "\034\002\ufff7\004\ufff7\006\ufff7\027\ufff7\030\ufff7\031\ufff7" +
+    "\035\ufff7\037\ufff7\043\ufff7\045\ufff7\073\ufff7\074\ufff7\075" +
+    "\ufff7\001\002\000\034\002\ufff8\004\ufff8\006\ufff8\027\ufff8" +
+    "\030\ufff8\031\ufff8\035\ufff8\037\ufff8\043\ufff8\045\ufff8\073" +
+    "\ufff8\074\ufff8\075\ufff8\001\002\000\004\002\023\001\002" +
+    "\000\034\002\ufff3\004\ufff3\006\ufff3\027\ufff3\030\ufff3\031" +
+    "\ufff3\035\ufff3\037\ufff3\043\ufff3\045\ufff3\073\ufff3\074\ufff3" +
+    "\075\ufff3\001\002\000\034\002\ufffa\004\ufffa\006\ufffa\027" +
+    "\ufffa\030\ufffa\031\ufffa\035\ufffa\037\ufffa\043\ufffa\045\ufffa" +
+    "\073\ufffa\074\ufffa\075\ufffa\001\002\000\034\002\ufff5\004" +
+    "\ufff5\006\ufff5\027\ufff5\030\ufff5\031\ufff5\035\ufff5\037\ufff5" +
+    "\043\ufff5\045\ufff5\073\ufff5\074\ufff5\075\ufff5\001\002\000" +
+    "\034\002\uffff\004\015\006\016\027\006\030\004\031\005" +
+    "\035\017\037\012\043\021\045\007\073\013\074\020\075" +
+    "\011\001\002\000\034\002\ufffe\004\ufffe\006\ufffe\027\ufffe" +
+    "\030\ufffe\031\ufffe\035\ufffe\037\ufffe\043\ufffe\045\ufffe\073" +
+    "\ufffe\074\ufffe\075\ufffe\001\002\000\034\002\ufffd\004\ufffd" +
+    "\006\ufffd\027\ufffd\030\ufffd\031\ufffd\035\ufffd\037\ufffd\043" +
+    "\ufffd\045\ufffd\073\ufffd\074\ufffd\075\ufffd\001\002\000\034" +
+    "\002\ufffb\004\ufffb\006\ufffb\027\ufffb\030\ufffb\031\ufffb\035" +
+    "\ufffb\037\ufffb\043\ufffb\045\ufffb\073\ufffb\074\ufffb\075\ufffb" +
+    "\001\002\000\034\002\ufff4\004\ufff4\006\ufff4\027\ufff4\030" +
     "\ufff4\031\ufff4\035\ufff4\037\ufff4\043\ufff4\045\ufff4\073\ufff4" +
-    "\074\ufff4\001\002\000\032\002\ufff9\004\ufff9\006\ufff9\027" +
-    "\ufff9\030\ufff9\031\ufff9\035\ufff9\037\ufff9\043\ufff9\045\ufff9" +
-    "\073\ufff9\074\ufff9\001\002\000\004\002\000\001\002\000" +
-    "\004\002\001\001\002" });
+    "\074\ufff4\075\ufff4\001\002\000\034\002\ufff9\004\ufff9\006" +
+    "\ufff9\027\ufff9\030\ufff9\031\ufff9\035\ufff9\037\ufff9\043\ufff9" +
+    "\045\ufff9\073\ufff9\074\ufff9\075\ufff9\001\002\000\004\002" +
+    "\000\001\002\000\004\002\001\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -80,12 +84,13 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\020\000\006\002\007\003\012\001\001\000\002\001" +
+    "\000\021\000\006\002\007\003\013\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\006\002\020\003\012\001\001\000\002\001\001\000\002" +
+    "\002\001\001\000\006\002\021\003\013\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
-    "\001\000\002\001\001\000\002\001\001" });
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -271,6 +276,15 @@ class CUP$Sintactico$actions {
 
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 13: // CLASE_GENERAL ::= FUNCION_ESPECIAL 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CLASE_GENERAL",1, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 14: // CLASE_GENERAL ::= FUNCIONES_CLICLOS_ETC 
             {
               Object RESULT =null;
 

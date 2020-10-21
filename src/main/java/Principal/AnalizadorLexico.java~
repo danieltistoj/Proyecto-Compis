@@ -1095,49 +1095,49 @@ public void add(String nuevo) {
           case 77: break;
           case 6:
             { this.add("MODULO");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 78: break;
           case 7:
             { this.add("PARENTESIS (");
-            return new Symbol(sym.PARENTESIS1);
+           // return new Symbol(sym.PARENTESIS1);
             }
             // fall through
           case 79: break;
           case 8:
             { this.add("PARENTESIS )");
-            return new Symbol(sym.PARENTESIS2);
+            //return new Symbol(sym.PARENTESIS2);
             }
             // fall through
           case 80: break;
           case 9:
             { this.add("MULTIPLICACION");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 81: break;
           case 10:
             { this.add("RESTA");
-            return new Symbol(sym.SIGNOS);
+           // return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 82: break;
           case 11:
             { this.add("COMA");
-            return new Symbol(sym.COMA);
+           // return new Symbol(sym.COMA);
             }
             // fall through
           case 83: break;
           case 12:
             { this.add("PUNTO");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 84: break;
           case 13:
             { this.add("DIVISION");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 85: break;
@@ -1148,43 +1148,43 @@ public void add(String nuevo) {
           case 86: break;
           case 15:
             { this.add("DOS PUNTOS");
-            return new Symbol(sym.DOS_PUNTOS);
+         //   return new Symbol(sym.DOS_PUNTOS);
             }
             // fall through
           case 87: break;
           case 16:
             { this.add("MENOR QUE");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 88: break;
           case 17:
             { this.add("IGUAL");
-            return new Symbol(sym.SIGNOS);
+           // return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 89: break;
           case 18:
             { this.add("MAYOR QUE");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 90: break;
           case 19:
             { this.add("VARIABLE CLASE");
-            return new Symbol(sym.VARIABLE_CLASE);
+            //return new Symbol(sym.VARIABLE_CLASE);
             }
             // fall through
           case 91: break;
           case 20:
             { this.add("CORCHETE 1");
-           return new Symbol(sym.SIGNOS);
+          // return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 92: break;
           case 21:
             { this.add("CORCHETE 2");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 93: break;
@@ -1195,13 +1195,13 @@ public void add(String nuevo) {
           case 94: break;
           case 23:
             { this.add("VARIABLE"); 
-            return new Symbol(sym.VARIABLE);
+            //return new Symbol(sym.VARIABLE);
             }
             // fall through
           case 95: break;
           case 24:
             { this.add("DISTINTO QUE");
-            return new Symbol(sym.SIGNOS);
+           // return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 96: break;
@@ -1217,25 +1217,25 @@ public void add(String nuevo) {
           case 98: break;
           case 27:
             { this.add("INCREMENTO");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 99: break;
           case 28:
             { this.add("DECREMENTO");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 100: break;
           case 29:
             { this.add("IGUAL QUE");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 101: break;
           case 30:
             { this.add("OR");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 102: break;
@@ -1251,7 +1251,7 @@ public void add(String nuevo) {
           case 104: break;
           case 33:
             { this.add("EXPONENTE");
-            return new Symbol(sym.SIGNOS);
+           // return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 105: break;
@@ -1262,7 +1262,7 @@ public void add(String nuevo) {
           case 106: break;
           case 35:
             { this.add("AND");
-            return new Symbol(sym.SIGNOS);
+            //return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 107: break;
@@ -1278,19 +1278,19 @@ public void add(String nuevo) {
           case 109: break;
           case 38:
             { this.add("RAIZ");
-           return new Symbol(sym.FUNCION_ESPECIAL);
+           //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
           case 110: break;
           case 39:
             { this.add("TIPO REAL");
-            return new Symbol(sym.TIPO_DATO);
+           // return new Symbol(sym.TIPO_DATO);
             }
             // fall through
           case 111: break;
           case 40:
             { this.add("SENO");
-            return new Symbol(sym.FUNCION_ESPECIAL);
+            //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
           case 112: break;
@@ -1301,79 +1301,85 @@ public void add(String nuevo) {
           case 113: break;
           case 42:
             { this.add("CLASE");
-            return new Symbol(sym.CLASE);
+            //return new Symbol(sym.CLASE);
             }
             // fall through
           case 114: break;
           case 43:
-            { this.add("DESDE");
+            { this.add("DESDE"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 115: break;
           case 44:
             { this.add("FALSO");
-            return new Symbol(sym.SIGNOS);
+           // return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 116: break;
           case 45:
-            { this.add("HACER");
+            { this.add("HACER"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 117: break;
           case 46:
-            { this.add("NUEVO");
+            { this.add("NUEVO");  
+         // return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 118: break;
           case 47:
             { this.add("TIPO CADENA");
-            return new Symbol(sym.TIPO_DATO);
+           // return new Symbol(sym.TIPO_DATO);
             }
             // fall through
           case 119: break;
           case 48:
             { this.add("COSENO");
-            return new Symbol(sym.FUNCION_ESPECIAL);
+           // return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
           case 120: break;
           case 49:
             { this.add("TIPO ENTERO");
-            return new Symbol(sym.TIPO_DATO);
+            //return new Symbol(sym.TIPO_DATO);
             }
             // fall through
           case 121: break;
           case 50:
             { this.add("METODOS");
-            return new Symbol(sym.METODOS);
+            //return new Symbol(sym.METODOS);
             }
             // fall through
           case 122: break;
           case 51:
             { this.add("TIPO DE PROPIEDAD");
-            return new Symbol(sym.TIPO_DE_METODOS);
+           // return new Symbol(sym.TIPO_DE_METODOS);
             }
             // fall through
           case 123: break;
           case 52:
             { this.add("INCLUIR");
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 124: break;
           case 53:
-            { this.add("ELIMINAR");
+            { this.add("ELIMINAR"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 125: break;
           case 54:
             { this.add("TIPO BOOLEANO ");
-          return new Symbol(sym.TIPO_DATO);
+         // return new Symbol(sym.TIPO_DATO);
             }
             // fall through
           case 126: break;
           case 55:
-            { this.add("DEVOLVER");
+            { this.add("DEVOLVER"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 127: break;
@@ -1388,85 +1394,92 @@ public void add(String nuevo) {
             // fall through
           case 129: break;
           case 58:
-            { this.add("EXTIENDE");
+            { this.add("EXTIENDE"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 130: break;
           case 59:
-            { this.add("MIENTRAS");
+            { this.add("MIENTRAS"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 131: break;
           case 60:
             { this.add("TANGENTE");
-            return new Symbol(sym.FUNCION_ESPECIAL);
+           // return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
           case 132: break;
           case 61:
             { this.add("LOGARTIMO");
-            return new Symbol(sym.FUNCION_ESPECIAL);
+            //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
           case 133: break;
           case 62:
-            { this.add("PRINCIPAL");
+            { this.add("PRINCIPAL"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 134: break;
           case 63:
             { this.add("VERDADERO");
-           return new Symbol(sym.SIGNOS);
+          // return new Symbol(sym.SIGNOS);
             }
             // fall through
           case 135: break;
           case 64:
-            { this.add("DESTRUCTOR");
+            { this.add("DESTRUCTOR"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 136: break;
           case 65:
-            { this.add("INSTANCIAR");
+            { this.add("INSTANCIAR"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 137: break;
           case 66:
             { this.add("CONSTRUCTOR"); 
-            return new Symbol(sym.TIPO_DATO);
+            //return new Symbol(sym.TIPO_DATO);
             }
             // fall through
           case 138: break;
           case 67:
             { this.add("PROPIEDADES"); 
-            return new Symbol(sym.PROPIEDADES);
+            //return new Symbol(sym.PROPIEDADES);
             }
             // fall through
           case 139: break;
           case 68:
             { this.add("CADENA:REAL");
-            return new Symbol(sym.FUNCION_ESPECIAL);
+           // return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
           case 140: break;
           case 69:
-            { this.add("DECREMAR");
+            { this.add("DECREMAR"); 
+           // return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 141: break;
           case 70:
-            { this.add("INCREMENTAR");
+            { this.add("INCREMENTAR"); 
+            //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
           case 142: break;
           case 71:
             { this.add("CADENA:ENTERO");
-            return new Symbol(sym.FUNCION_ESPECIAL);
+            //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
           case 143: break;
           case 72:
             { this.add("CADENA:BOOLEANO");
-            return new Symbol(sym.FUNCION_ESPECIAL);
+            //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
           case 144: break;
