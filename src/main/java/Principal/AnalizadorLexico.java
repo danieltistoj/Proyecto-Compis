@@ -108,16 +108,16 @@ class AnalizadorLexico {
     "\1\27\2\26\1\1\1\0\1\30\1\0\1\31\1\0"+
     "\1\32\1\33\1\34\3\0\1\35\1\23\1\0\6\23"+
     "\1\36\3\23\1\37\23\27\1\40\2\27\1\41\1\0"+
-    "\1\42\1\43\7\23\1\3\3\23\33\27\11\23\20\27"+
-    "\1\44\3\27\1\45\1\27\1\46\1\47\1\50\1\51"+
-    "\2\27\1\52\10\23\2\27\1\52\2\27\1\53\5\27"+
-    "\1\54\1\55\5\27\1\56\3\27\10\23\1\27\1\57"+
-    "\1\60\2\27\1\61\13\27\3\23\1\62\1\63\3\23"+
-    "\7\27\1\64\7\27\2\23\1\65\2\23\1\66\4\27"+
-    "\1\67\1\70\1\71\1\72\3\27\1\73\1\27\1\74"+
-    "\1\27\3\23\6\27\1\75\1\76\1\77\1\23\1\100"+
-    "\1\23\5\27\1\101\1\102\1\103\2\27\1\104\1\105"+
-    "\1\106\3\27\1\107\1\110";
+    "\1\42\1\43\7\23\1\44\3\23\33\27\11\23\20\27"+
+    "\1\45\3\27\1\46\1\27\1\47\1\50\1\51\1\52"+
+    "\2\27\1\53\10\23\2\27\1\53\2\27\1\54\5\27"+
+    "\1\55\1\56\5\27\1\57\3\27\10\23\1\27\1\60"+
+    "\1\61\2\27\1\62\13\27\3\23\1\63\1\64\3\23"+
+    "\7\27\1\65\7\27\2\23\1\66\2\23\1\67\4\27"+
+    "\1\70\1\71\1\72\1\73\3\27\1\74\1\27\1\75"+
+    "\1\27\3\23\6\27\1\76\1\77\1\100\1\23\1\101"+
+    "\1\23\5\27\1\102\1\103\1\104\2\27\1\105\1\106"+
+    "\1\107\3\27\1\110\1\111";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[314];
@@ -606,15 +606,15 @@ class AnalizadorLexico {
   private boolean zzAtBOL = true;
 
   /** Whether the user-EOF-code has already been executed. */
+  @SuppressWarnings("unused")
   private boolean zzEOFDone;
 
   /* user code: */
 
 public int tabulaciones;
-public ArrayList<Simbolos> sim;
+public static ArrayList<Simbolos> sim;
 
 public void add(String nuevo) {
-
         boolean bandera = false;
         String a = nuevo;
        
@@ -905,18 +905,6 @@ public void add(String nuevo) {
   }
 
 
-  /**
-   * Contains user EOF-code, which will be executed exactly once,
-   * when the end of file is reached
-   */
-  private void zzDoEOF() throws java.io.IOException {
-    if (!zzEOFDone) {
-      zzEOFDone = true;
-    
-  yyclose();    }
-  }
-
-
 
 
   /**
@@ -1062,427 +1050,430 @@ public void add(String nuevo) {
 
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
-            zzDoEOF();
-          {   //return new Symbol(sym.EOF);
- }
+        return YYEOF;
       }
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1:
-            { System.err.println("Error Léxico \"" + yytext() + "\" ["+ (yyline+1) + ":"+ (yycolumn+1) + ":"+ yychar + "]");
+            { System.err.println("Error Léxico \"" + yytext() + "\" ["+"LINEA: "+ (yyline+1) + ": COLUMNA"+ (yycolumn+1) + "]");
             }
             // fall through
-          case 73: break;
+          case 74: break;
           case 2:
             { this.tabulaciones++;
             }
             // fall through
-          case 74: break;
+          case 75: break;
           case 3:
-            { 
+            { this.add("FIN DE LINEA");
             }
             // fall through
-          case 75: break;
+          case 76: break;
           case 4:
             { System.out.print(yytext());
             }
             // fall through
-          case 76: break;
+          case 77: break;
           case 5:
             { //this.tabulacion = 0;
             }
             // fall through
-          case 77: break;
+          case 78: break;
           case 6:
             { this.add("MODULO");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 78: break;
+          case 79: break;
           case 7:
             { this.add("PARENTESIS (");
            // return new Symbol(sym.PARENTESIS1);
             }
             // fall through
-          case 79: break;
+          case 80: break;
           case 8:
             { this.add("PARENTESIS )");
             //return new Symbol(sym.PARENTESIS2);
             }
             // fall through
-          case 80: break;
+          case 81: break;
           case 9:
             { this.add("MULTIPLICACION");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 81: break;
+          case 82: break;
           case 10:
             { this.add("RESTA");
            // return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 82: break;
+          case 83: break;
           case 11:
             { this.add("COMA");
            // return new Symbol(sym.COMA);
             }
             // fall through
-          case 83: break;
+          case 84: break;
           case 12:
             { this.add("PUNTO");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 84: break;
+          case 85: break;
           case 13:
             { this.add("DIVISION");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 85: break;
+          case 86: break;
           case 14:
             { this.add("NUMEROS DECIMALES");
             }
             // fall through
-          case 86: break;
+          case 87: break;
           case 15:
             { this.add("DOS PUNTOS");
          //   return new Symbol(sym.DOS_PUNTOS);
             }
             // fall through
-          case 87: break;
+          case 88: break;
           case 16:
             { this.add("MENOR QUE");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 88: break;
+          case 89: break;
           case 17:
             { this.add("IGUAL");
            // return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 89: break;
+          case 90: break;
           case 18:
             { this.add("MAYOR QUE");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 90: break;
+          case 91: break;
           case 19:
             { this.add("VARIABLE CLASE");
             //return new Symbol(sym.VARIABLE_CLASE);
             }
             // fall through
-          case 91: break;
+          case 92: break;
           case 20:
             { this.add("CORCHETE 1");
           // return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 92: break;
+          case 93: break;
           case 21:
             { this.add("CORCHETE 2");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 93: break;
+          case 94: break;
           case 22:
             { this.add("TIPO BOOLEANO");
             }
             // fall through
-          case 94: break;
+          case 95: break;
           case 23:
             { this.add("VARIABLE"); 
             //return new Symbol(sym.VARIABLE);
             }
             // fall through
-          case 95: break;
+          case 96: break;
           case 24:
             { this.add("DISTINTO QUE");
            // return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 96: break;
+          case 97: break;
           case 25:
             { this.add("TIPO_DATO_CUP");
             }
             // fall through
-          case 97: break;
+          case 98: break;
           case 26:
             { this.add("COMENTARIO");
             }
             // fall through
-          case 98: break;
+          case 99: break;
           case 27:
             { this.add("INCREMENTO");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 99: break;
+          case 100: break;
           case 28:
             { this.add("DECREMENTO");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 100: break;
+          case 101: break;
           case 29:
             { this.add("IGUAL QUE");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 101: break;
+          case 102: break;
           case 30:
             { this.add("OR");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 102: break;
+          case 103: break;
           case 31:
             { this.add("ERROR");
             }
             // fall through
-          case 103: break;
+          case 104: break;
           case 32:
             { this.add("IF");
             }
             // fall through
-          case 104: break;
+          case 105: break;
           case 33:
             { this.add("EXPONENTE");
            // return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 105: break;
+          case 106: break;
           case 34:
             { this.add("NUMEROS REALES");
             }
             // fall through
-          case 106: break;
+          case 107: break;
           case 35:
             { this.add("AND");
             //return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 107: break;
-          case 36:
-            { this.add("LEER");
-            }
-            // fall through
           case 108: break;
-          case 37:
-            { this.add("TIPO NULO");
+          case 36:
+            { 
             }
             // fall through
           case 109: break;
+          case 37:
+            { this.add("LEER");
+            }
+            // fall through
+          case 110: break;
           case 38:
+            { this.add("TIPO NULO");
+            }
+            // fall through
+          case 111: break;
+          case 39:
             { this.add("RAIZ");
            //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
-          case 110: break;
-          case 39:
+          case 112: break;
+          case 40:
             { this.add("TIPO REAL");
            // return new Symbol(sym.TIPO_DATO);
             }
             // fall through
-          case 111: break;
-          case 40:
+          case 113: break;
+          case 41:
             { this.add("SENO");
             //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
-          case 112: break;
-          case 41:
+          case 114: break;
+          case 42:
             { this.add("SINO");
             }
             // fall through
-          case 113: break;
-          case 42:
+          case 115: break;
+          case 43:
             { this.add("CLASE");
             //return new Symbol(sym.CLASE);
             }
             // fall through
-          case 114: break;
-          case 43:
+          case 116: break;
+          case 44:
             { this.add("DESDE"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 115: break;
-          case 44:
+          case 117: break;
+          case 45:
             { this.add("FALSO");
            // return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 116: break;
-          case 45:
+          case 118: break;
+          case 46:
             { this.add("HACER"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 117: break;
-          case 46:
+          case 119: break;
+          case 47:
             { this.add("NUEVO");  
          // return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 118: break;
-          case 47:
+          case 120: break;
+          case 48:
             { this.add("TIPO CADENA");
            // return new Symbol(sym.TIPO_DATO);
             }
             // fall through
-          case 119: break;
-          case 48:
+          case 121: break;
+          case 49:
             { this.add("COSENO");
            // return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
-          case 120: break;
-          case 49:
+          case 122: break;
+          case 50:
             { this.add("TIPO ENTERO");
             //return new Symbol(sym.TIPO_DATO);
             }
             // fall through
-          case 121: break;
-          case 50:
+          case 123: break;
+          case 51:
             { this.add("METODOS");
             //return new Symbol(sym.METODOS);
             }
             // fall through
-          case 122: break;
-          case 51:
+          case 124: break;
+          case 52:
             { this.add("TIPO DE PROPIEDAD");
            // return new Symbol(sym.TIPO_DE_METODOS);
             }
             // fall through
-          case 123: break;
-          case 52:
+          case 125: break;
+          case 53:
             { this.add("INCLUIR");
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 124: break;
-          case 53:
+          case 126: break;
+          case 54:
             { this.add("ELIMINAR"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 125: break;
-          case 54:
+          case 127: break;
+          case 55:
             { this.add("TIPO BOOLEANO ");
          // return new Symbol(sym.TIPO_DATO);
             }
             // fall through
-          case 126: break;
-          case 55:
+          case 128: break;
+          case 56:
             { this.add("DEVOLVER"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 127: break;
-          case 56:
+          case 129: break;
+          case 57:
             { this.add("ENCONCES");
             }
             // fall through
-          case 128: break;
-          case 57:
+          case 130: break;
+          case 58:
             { this.add("ESCRIBIR");
             }
             // fall through
-          case 129: break;
-          case 58:
+          case 131: break;
+          case 59:
             { this.add("EXTIENDE"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 130: break;
-          case 59:
+          case 132: break;
+          case 60:
             { this.add("MIENTRAS"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 131: break;
-          case 60:
+          case 133: break;
+          case 61:
             { this.add("TANGENTE");
            // return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
-          case 132: break;
-          case 61:
+          case 134: break;
+          case 62:
             { this.add("LOGARTIMO");
             //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
-          case 133: break;
-          case 62:
+          case 135: break;
+          case 63:
             { this.add("PRINCIPAL"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 134: break;
-          case 63:
+          case 136: break;
+          case 64:
             { this.add("VERDADERO");
           // return new Symbol(sym.SIGNOS);
             }
             // fall through
-          case 135: break;
-          case 64:
+          case 137: break;
+          case 65:
             { this.add("DESTRUCTOR"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 136: break;
-          case 65:
+          case 138: break;
+          case 66:
             { this.add("INSTANCIAR"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 137: break;
-          case 66:
+          case 139: break;
+          case 67:
             { this.add("CONSTRUCTOR"); 
             //return new Symbol(sym.TIPO_DATO);
             }
             // fall through
-          case 138: break;
-          case 67:
+          case 140: break;
+          case 68:
             { this.add("PROPIEDADES"); 
             //return new Symbol(sym.PROPIEDADES);
             }
             // fall through
-          case 139: break;
-          case 68:
+          case 141: break;
+          case 69:
             { this.add("CADENA:REAL");
            // return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
-          case 140: break;
-          case 69:
+          case 142: break;
+          case 70:
             { this.add("DECREMAR"); 
            // return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 141: break;
-          case 70:
+          case 143: break;
+          case 71:
             { this.add("INCREMENTAR"); 
             //return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
             }
             // fall through
-          case 142: break;
-          case 71:
+          case 144: break;
+          case 72:
             { this.add("CADENA:ENTERO");
             //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
-          case 143: break;
-          case 72:
+          case 145: break;
+          case 73:
             { this.add("CADENA:BOOLEANO");
             //return new Symbol(sym.FUNCION_ESPECIAL);
             }
             // fall through
-          case 144: break;
+          case 146: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

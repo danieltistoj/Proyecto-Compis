@@ -1,0 +1,38 @@
+/* área de inclusión de bibliotecas externas */
+// ninguna librería que cargar
+
+/* área de declaración de clases */
+clase Impar
+  propiedades privadas:
+  propiedades publicas:
+    cadena hola
+  metodos publicos:
+    entero esImpar(entero numero)
+      si numero % 2 entonces
+        devolver 1;
+      sino 
+        devolver 0;
+  metodos privados:
+  
+
+clase HolaMundo
+  propiedades privadas:
+    entero a
+    cadena nombre
+    Impar i
+  metodos publicos:
+    constructor()
+      i = nuevo Impar()
+      a = 0
+      nombre = ""
+
+/* área de declaración de función de carga inicial */
+entero Principal()
+  HolaMundo hola = instanciar HolaMundo()
+  hola.inicio()
+  devolver 0
+  desde i mientras i > 5 decrementar 2 hacer
+    escribir i
+    hacer
+        a =5+ b
+    mientras a < 10

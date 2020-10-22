@@ -1,0 +1,32 @@
+Clase entero cadena  Metodos clase Metodos Metodos entero  cadena fadf Idfa ,:
+> < verdadero falso 
+    (
+    )
+    ,
+    +
+    -
+    *
+    /
+    %
+    ˆ
+     =
+    ++
+    --
+    AND 
+    OR
+    >
+    <
+    ==
+    !=
+    :
+   [
+    ]
+   .
+    cadenaAEntero
+    cadenaAReal
+    cadenaABoleano
+    seno
+    coseno
+    tangente
+    logaritmo
+    raiz    

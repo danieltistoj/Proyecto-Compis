@@ -22,18 +22,15 @@ public class Main {
      */
     public static void main(String[] args) {
         try {
-            AnalizadorLexico lex = new AnalizadorLexico(new FileReader("src/main/java/PaqueteFlex/archivo.txt"));  
-            Sintactico sintactico = new Sintactico((Scanner) lex);
-            sintactico.parse();
-            ArrayList <Simbolos> sim = lex.sim;
+            String[] archivo  = new String[1];
+            archivo[0] = "Codigo.loop";
+            AnalizadorLexico.main(archivo);
+            ArrayList <Simbolos> sim = AnalizadorLexico.sim;
             EscribirenFichero es = new EscribirenFichero();
             es.escribir(sim);
-        } catch (FileNotFoundException ex) {
-            System.out.println("entro");
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
             System.out.println("entro2");
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("ERROR: "+ex.getMessage());
         }
     }
     

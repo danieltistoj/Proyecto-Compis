@@ -1,0 +1,25 @@
+/* área de declaración de función de carga inicial */
+entero Principal()
+  HolaMundo hola = instanciar HolaMundo()
+  hola.inicio()
+  devolver 0
+  desde i mientras i > 5 decrementar 2 hacer
+    escribir i
+    hacer
+        a =5+ b
+    mientras a < 10
+    
+    
+    
+
+  entero i
+  desde i = 0 mientras i < 5 hacer
+    escribir i ;
+    i = i +2;
+    i =++ b
+    I -= i + (5*8)
+    I = i - - i ++ i
+  
+  
+  
+
