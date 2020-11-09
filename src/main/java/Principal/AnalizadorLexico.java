@@ -4,12 +4,12 @@
 
 package Principal;
 import java.util.ArrayList;
-/*import java_cup.runtime.Symbol;*/
+import java_cup.runtime.Symbol;
 
 
 // See https://github.com/jflex-de/jflex/issues/222
 @SuppressWarnings("FallThrough")
-class AnalizadorLexico {
+class AnalizadorLexico implements java_cup.runtime.Scanner {
 
   /** This character denotes the end of file. */
   public static final int YYEOF = -1;
@@ -606,7 +606,6 @@ class AnalizadorLexico {
   private boolean zzAtBOL = true;
 
   /** Whether the user-EOF-code has already been executed. */
-  @SuppressWarnings("unused")
   private boolean zzEOFDone;
 
   /* user code: */
@@ -905,6 +904,18 @@ public void add(String nuevo) {
   }
 
 
+  /**
+   * Contains user EOF-code, which will be executed exactly once,
+   * when the end of file is reached
+   */
+  private void zzDoEOF() throws java.io.IOException {
+    if (!zzEOFDone) {
+      zzEOFDone = true;
+    
+  yyclose();    }
+  }
+
+
 
 
   /**
@@ -914,7 +925,7 @@ public void add(String nuevo) {
    * @return the next token.
    * @exception java.io.IOException if any I/O-Error occurs.
    */
-  public int yylex() throws java.io.IOException {
+  @Override  public java_cup.runtime.Symbol next_token() throws java.io.IOException {
     int zzInput;
     int zzAction;
 
@@ -1050,7 +1061,9 @@ public void add(String nuevo) {
 
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
-        return YYEOF;
+            zzDoEOF();
+          {   return new Symbol(sym.EOF);
+ }
       }
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
@@ -1111,7 +1124,7 @@ public void add(String nuevo) {
           case 83: break;
           case 11:
             { this.add("COMA");
-           // return new Symbol(sym.COMA);
+            return new Symbol(sym.COMA);
             }
             // fall through
           case 84: break;
@@ -1134,7 +1147,7 @@ public void add(String nuevo) {
           case 87: break;
           case 15:
             { this.add("DOS PUNTOS");
-         //   return new Symbol(sym.DOS_PUNTOS);
+            return new Symbol(sym.DOS_PUNTOS);
             }
             // fall through
           case 88: break;
@@ -1292,7 +1305,7 @@ public void add(String nuevo) {
           case 115: break;
           case 43:
             { this.add("CLASE");
-            //return new Symbol(sym.CLASE);
+            return new Symbol(sym.CLASE);
             }
             // fall through
           case 116: break;
@@ -1340,7 +1353,7 @@ public void add(String nuevo) {
           case 123: break;
           case 51:
             { this.add("METODOS");
-            //return new Symbol(sym.METODOS);
+            return new Symbol(sym.METODOS);
             }
             // fall through
           case 124: break;
@@ -1514,7 +1527,7 @@ public void add(String nuevo) {
           java.io.FileInputStream stream = new java.io.FileInputStream(argv[i]);
           java.io.Reader reader = new java.io.InputStreamReader(stream, encodingName);
           scanner = new AnalizadorLexico(reader);
-          while ( !scanner.zzAtEOF ) scanner.yylex();
+          while ( !scanner.zzAtEOF ) scanner.next_token();
         }
         catch (java.io.FileNotFoundException e) {
           System.out.println("File not found : \""+argv[i]+"\"");

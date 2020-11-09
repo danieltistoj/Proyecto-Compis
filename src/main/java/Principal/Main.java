@@ -22,12 +22,20 @@ public class Main {
      */
     public static void main(String[] args) {
         try {
+            AnalizadorLexico lex = new AnalizadorLexico(new FileReader("Codigo2.loop"));
+            Sintactico sintactico = new Sintactico((Scanner) lex);
+            sintactico.parse();
+            ArrayList<Simbolos> sim = lex.sim;
+            EscribirenFichero es = new EscribirenFichero();
+            es.escribir(sim);
+            /*
             String[] archivo  = new String[1];
             archivo[0] = "Codigo.loop";
             AnalizadorLexico.main(archivo);
             ArrayList <Simbolos> sim = AnalizadorLexico.sim;
             EscribirenFichero es = new EscribirenFichero();
             es.escribir(sim);
+            */
         } catch (Exception ex) {
             System.out.println("entro2");
             System.out.println("ERROR: "+ex.getMessage());

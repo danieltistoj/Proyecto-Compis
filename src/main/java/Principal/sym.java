@@ -44,6 +44,7 @@ public interface sym {
   public static final int DECREMENTO = 18;
   public static final int error = 1;
   public static final int COMA = 23;
+  public static final int COMENTARIO = 60;
   public static final int MODULO = 42;
   public static final int MENOS = 31;
   public static final int OPERADORES = 36;
@@ -65,6 +66,7 @@ public interface sym {
   public static final int EXPONENCIACION = 41;
   public static final int LEER = 8;
   public static final int HACER = 19;
+  public static final int SALTO_LINEA = 61;
   public static final int MENOR_QUE = 43;
   public static final int DIVISION = 40;
   public static final int MULTIPLICACION = 39;
@@ -128,7 +130,9 @@ public interface sym {
   "CADENA_A_ENTERO",
   "SIGNOS",
   "FUNCION_ESPECIAL",
-  "FUNCIONES_CLICLOS_ETC"
+  "FUNCIONES_CLICLOS_ETC",
+  "COMENTARIO",
+  "SALTO_LINEA"
   };
 }
 
