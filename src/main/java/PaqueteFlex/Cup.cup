@@ -40,7 +40,12 @@ CLASE_GENERAL ::=          CLASE_PARTICULAR CLASE_GENERAL
 CLASE_PARTICULAR ::=       CLASE VARIABLE_CLASE                               /*Si solo hay una clase sin contenido*/
                            |CLASE VARIABLE_CLASE PROPIEDAD_CLASE METODO_CLASE /*Si hay una clase con propiedad y metodo*/
                            |CLASE VARIABLE_CLASE PROPIEDAD_CLASE              /*Si hay una clase solo con propiedad*/
-                           |CLASE VARIABLE_CLASE METODO_CLASE;                /*Si hay una clase solo con metodo*/
+                           |CLASE VARIABLE_CLASE METODO_CLASE
+                           |CLASE TIPO_DATO                               
+                           |CLASE TIPO_DATO PROPIEDAD_CLASE METODO_CLASE 
+                           |CLASE TIPO_DATO PROPIEDAD_CLASE              
+                           |CLASE TIPO_DATO METODO_CLASE
+                            ;               
 
 PROPIEDAD_CLASE ::=        PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS
                            |PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS VARIABLES_PROPIEDADES 
@@ -54,7 +59,8 @@ VARIABLES_PROPIEDADES2 ::= TIPO_DATO VARIABLE
                            |TIPO_DATO VARIABLE COMA VARIABLES_PROPIEDADES2;
 
 METODO_CLASE ::=           METODOS TIPO_DE_METODOS DOS_PUNTOS METODOS_PARTICULAR  
-                           |METODOS TIPO_DE_METODOS DOS_PUNTOS METODOS_PARTICULAR METODO_CLASE;
+                           |METODOS TIPO_DE_METODOS DOS_PUNTOS METODOS_PARTICULAR METODO_CLASE
+                           |METODOS TIPO_DE_METODOS DOS_PUNTOS;
 
 METODOS_PARTICULAR ::=     TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 
                            |TIPO_DATO PARENTESIS1 PARENTESIS2  METODOS_PARTICULAR

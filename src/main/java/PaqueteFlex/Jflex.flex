@@ -83,6 +83,7 @@ public void add(String nuevo) {
     tipo_de_metodos = "Publica"|"Publico"|"Privada"|"Privados"|"Protegidos"|"Protegidas"
     tipo_clase = "Impar"|"Par"
 
+
     /*  PALABRAS RESERVADAS TIPOS DATO Y FUNCIONES */
 
     tipo_entero = "entero" 
@@ -543,7 +544,8 @@ public void add(String nuevo) {
         }
     {tipo_clase} 
         { 
-         
+          this.add("PAR O IMPAR");
+          return new Symbol(sym.TIPO_DATO);
         }
     {booleano}
         {  

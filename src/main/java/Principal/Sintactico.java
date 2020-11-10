@@ -31,13 +31,15 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\026\000\002\002\004\000\002\002\003\000\002\003" +
+    "\000\033\000\002\002\004\000\002\002\003\000\002\003" +
     "\004\000\002\003\003\000\002\004\004\000\002\004\006" +
-    "\000\002\004\005\000\002\004\005\000\002\007\005\000" +
-    "\002\007\006\000\002\007\007\000\002\005\004\000\002" +
-    "\005\005\000\002\006\004\000\002\006\006\000\002\010" +
-    "\006\000\002\010\007\000\002\011\007\000\002\011\006" +
-    "\000\002\011\006\000\002\011\007\000\002\011\010" });
+    "\000\002\004\005\000\002\004\005\000\002\004\004\000" +
+    "\002\004\006\000\002\004\005\000\002\004\005\000\002" +
+    "\007\005\000\002\007\006\000\002\007\007\000\002\005" +
+    "\004\000\002\005\005\000\002\006\004\000\002\006\006" +
+    "\000\002\010\006\000\002\010\007\000\002\010\005\000" +
+    "\002\011\007\000\002\011\006\000\002\011\006\000\002" +
+    "\011\007\000\002\011\010" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -45,31 +47,34 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\047\000\004\004\007\001\002\000\004\002\051\001" +
+    "\000\053\000\004\004\007\001\002\000\004\002\055\001" +
     "\002\000\004\002\000\001\002\000\006\002\ufffe\004\007" +
-    "\001\002\000\004\043\010\001\002\000\012\002\ufffd\004" +
-    "\ufffd\005\014\006\013\001\002\000\010\002\ufffb\004\ufffb" +
-    "\006\013\001\002\000\006\002\ufffa\004\ufffa\001\002\000" +
-    "\004\067\024\001\002\000\004\067\015\001\002\000\004" +
-    "\035\016\001\002\000\012\002\ufff9\004\ufff9\006\ufff9\045" +
-    "\020\001\002\000\012\002\ufff8\004\ufff8\005\014\006\ufff8" +
-    "\001\002\000\004\037\021\001\002\000\014\002\ufff6\004" +
-    "\ufff6\005\ufff6\006\ufff6\045\020\001\002\000\012\002\ufff5" +
-    "\004\ufff5\005\ufff5\006\ufff5\001\002\000\010\002\ufff7\004" +
-    "\ufff7\006\ufff7\001\002\000\004\035\025\001\002\000\004" +
-    "\045\026\001\002\000\006\027\031\037\032\001\002\000" +
-    "\010\002\ufff2\004\ufff2\006\013\001\002\000\006\002\ufff1" +
-    "\004\ufff1\001\002\000\004\030\045\001\002\000\004\027" +
-    "\033\001\002\000\006\030\034\045\035\001\002\000\012" +
-    "\002\uffee\004\uffee\006\uffee\045\026\001\002\000\004\037" +
-    "\041\001\002\000\004\030\037\001\002\000\012\002\ufff0" +
-    "\004\ufff0\006\ufff0\045\026\001\002\000\010\002\uffec\004" +
-    "\uffec\006\uffec\001\002\000\006\030\ufff4\031\042\001\002" +
-    "\000\004\045\035\001\002\000\004\030\ufff3\001\002\000" +
-    "\010\002\uffed\004\uffed\006\uffed\001\002\000\004\045\026" +
-    "\001\002\000\010\002\uffef\004\uffef\006\uffef\001\002\000" +
-    "\006\002\ufffc\004\ufffc\001\002\000\004\002\uffff\001\002" +
-    "\000\004\002\001\001\002" });
+    "\001\002\000\006\043\010\045\011\001\002\000\012\002" +
+    "\ufffd\004\ufffd\005\014\006\015\001\002\000\012\002\ufff9" +
+    "\004\ufff9\005\014\006\015\001\002\000\010\002\ufff7\004" +
+    "\ufff7\006\015\001\002\000\006\002\ufff6\004\ufff6\001\002" +
+    "\000\004\067\041\001\002\000\004\067\016\001\002\000" +
+    "\004\035\017\001\002\000\010\002\uffec\004\uffec\045\020" +
+    "\001\002\000\006\027\023\037\024\001\002\000\010\002" +
+    "\uffee\004\uffee\006\015\001\002\000\006\002\uffed\004\uffed" +
+    "\001\002\000\004\030\037\001\002\000\004\027\025\001" +
+    "\002\000\006\030\026\045\027\001\002\000\012\002\uffe9" +
+    "\004\uffe9\006\uffe9\045\020\001\002\000\004\037\033\001" +
+    "\002\000\004\030\031\001\002\000\012\002\uffeb\004\uffeb" +
+    "\006\uffeb\045\020\001\002\000\010\002\uffe7\004\uffe7\006" +
+    "\uffe7\001\002\000\006\030\ufff0\031\034\001\002\000\004" +
+    "\045\027\001\002\000\004\030\uffef\001\002\000\010\002" +
+    "\uffe8\004\uffe8\006\uffe8\001\002\000\004\045\020\001\002" +
+    "\000\010\002\uffea\004\uffea\006\uffea\001\002\000\004\035" +
+    "\042\001\002\000\012\002\ufff5\004\ufff5\006\ufff5\045\044" +
+    "\001\002\000\012\002\ufff4\004\ufff4\005\014\006\ufff4\001" +
+    "\002\000\004\037\045\001\002\000\014\002\ufff2\004\ufff2" +
+    "\005\ufff2\006\ufff2\045\044\001\002\000\012\002\ufff1\004" +
+    "\ufff1\005\ufff1\006\ufff1\001\002\000\010\002\ufff3\004\ufff3" +
+    "\006\ufff3\001\002\000\006\002\ufff8\004\ufff8\001\002\000" +
+    "\010\002\ufffb\004\ufffb\006\015\001\002\000\006\002\ufffa" +
+    "\004\ufffa\001\002\000\006\002\ufffc\004\ufffc\001\002\000" +
+    "\004\002\uffff\001\002\000\004\002\001\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -77,21 +82,23 @@ public class Sintactico extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\047\000\010\002\003\003\004\004\005\001\001\000" +
-    "\002\001\001\000\002\001\001\000\006\003\047\004\005" +
-    "\001\001\000\002\001\001\000\006\007\010\010\011\001" +
-    "\001\000\004\010\046\001\001\000\002\001\001\000\002" +
-    "\001\001\000\002\001\001\000\002\001\001\000\004\005" +
-    "\016\001\001\000\004\007\022\001\001\000\002\001\001" +
-    "\000\004\005\021\001\001\000\002\001\001\000\002\001" +
-    "\001\000\002\001\001\000\004\011\026\001\001\000\002" +
-    "\001\001\000\004\010\027\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\004\006\035\001\001" +
-    "\000\004\011\043\001\001\000\002\001\001\000\002\001" +
-    "\001\000\004\011\037\001\001\000\002\001\001\000\002" +
-    "\001\001\000\004\006\042\001\001\000\002\001\001\000" +
-    "\002\001\001\000\004\011\045\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001" });
+    "\000\053\000\010\002\003\003\004\004\005\001\001\000" +
+    "\002\001\001\000\002\001\001\000\006\003\053\004\005" +
+    "\001\001\000\002\001\001\000\006\007\050\010\051\001" +
+    "\001\000\006\007\011\010\012\001\001\000\004\010\047" +
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\004\011\020\001\001\000\002" +
+    "\001\001\000\004\010\021\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\004\006\027\001\001" +
+    "\000\004\011\035\001\001\000\002\001\001\000\002\001" +
+    "\001\000\004\011\031\001\001\000\002\001\001\000\002" +
+    "\001\001\000\004\006\034\001\001\000\002\001\001\000" +
+    "\002\001\001\000\004\011\037\001\001\000\002\001\001" +
+    "\000\002\001\001\000\004\005\042\001\001\000\004\007" +
+    "\046\001\001\000\002\001\001\000\004\005\045\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\004\010\052\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -231,7 +238,43 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 8: // PROPIEDAD_CLASE ::= PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS 
+          case 8: // CLASE_PARTICULAR ::= CLASE TIPO_DATO 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CLASE_PARTICULAR",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-1)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 9: // CLASE_PARTICULAR ::= CLASE TIPO_DATO PROPIEDAD_CLASE METODO_CLASE 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CLASE_PARTICULAR",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-3)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 10: // CLASE_PARTICULAR ::= CLASE TIPO_DATO PROPIEDAD_CLASE 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CLASE_PARTICULAR",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 11: // CLASE_PARTICULAR ::= CLASE TIPO_DATO METODO_CLASE 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("CLASE_PARTICULAR",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 12: // PROPIEDAD_CLASE ::= PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS 
             {
               Object RESULT =null;
 
@@ -240,7 +283,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 9: // PROPIEDAD_CLASE ::= PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS VARIABLES_PROPIEDADES 
+          case 13: // PROPIEDAD_CLASE ::= PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS VARIABLES_PROPIEDADES 
             {
               Object RESULT =null;
 
@@ -249,7 +292,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 10: // PROPIEDAD_CLASE ::= PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS VARIABLES_PROPIEDADES PROPIEDAD_CLASE 
+          case 14: // PROPIEDAD_CLASE ::= PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS VARIABLES_PROPIEDADES PROPIEDAD_CLASE 
             {
               Object RESULT =null;
 
@@ -258,7 +301,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 11: // VARIABLES_PROPIEDADES ::= TIPO_DATO VARIABLE 
+          case 15: // VARIABLES_PROPIEDADES ::= TIPO_DATO VARIABLE 
             {
               Object RESULT =null;
 
@@ -267,7 +310,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 12: // VARIABLES_PROPIEDADES ::= TIPO_DATO VARIABLE VARIABLES_PROPIEDADES 
+          case 16: // VARIABLES_PROPIEDADES ::= TIPO_DATO VARIABLE VARIABLES_PROPIEDADES 
             {
               Object RESULT =null;
 
@@ -276,7 +319,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 13: // VARIABLES_PROPIEDADES2 ::= TIPO_DATO VARIABLE 
+          case 17: // VARIABLES_PROPIEDADES2 ::= TIPO_DATO VARIABLE 
             {
               Object RESULT =null;
 
@@ -285,7 +328,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 14: // VARIABLES_PROPIEDADES2 ::= TIPO_DATO VARIABLE COMA VARIABLES_PROPIEDADES2 
+          case 18: // VARIABLES_PROPIEDADES2 ::= TIPO_DATO VARIABLE COMA VARIABLES_PROPIEDADES2 
             {
               Object RESULT =null;
 
@@ -294,7 +337,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 15: // METODO_CLASE ::= METODOS TIPO_DE_METODOS DOS_PUNTOS METODOS_PARTICULAR 
+          case 19: // METODO_CLASE ::= METODOS TIPO_DE_METODOS DOS_PUNTOS METODOS_PARTICULAR 
             {
               Object RESULT =null;
 
@@ -303,7 +346,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 16: // METODO_CLASE ::= METODOS TIPO_DE_METODOS DOS_PUNTOS METODOS_PARTICULAR METODO_CLASE 
+          case 20: // METODO_CLASE ::= METODOS TIPO_DE_METODOS DOS_PUNTOS METODOS_PARTICULAR METODO_CLASE 
             {
               Object RESULT =null;
 
@@ -312,7 +355,16 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 17: // METODOS_PARTICULAR ::= TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 
+          case 21: // METODO_CLASE ::= METODOS TIPO_DE_METODOS DOS_PUNTOS 
+            {
+              Object RESULT =null;
+
+              CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("METODO_CLASE",6, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
+            }
+          return CUP$Sintactico$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 22: // METODOS_PARTICULAR ::= TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 
             {
               Object RESULT =null;
 
@@ -321,7 +373,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 18: // METODOS_PARTICULAR ::= TIPO_DATO PARENTESIS1 PARENTESIS2 METODOS_PARTICULAR 
+          case 23: // METODOS_PARTICULAR ::= TIPO_DATO PARENTESIS1 PARENTESIS2 METODOS_PARTICULAR 
             {
               Object RESULT =null;
 
@@ -330,7 +382,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 19: // METODOS_PARTICULAR ::= TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 
+          case 24: // METODOS_PARTICULAR ::= TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 
             {
               Object RESULT =null;
 
@@ -339,7 +391,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 20: // METODOS_PARTICULAR ::= TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 METODOS_PARTICULAR 
+          case 25: // METODOS_PARTICULAR ::= TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 METODOS_PARTICULAR 
             {
               Object RESULT =null;
 
@@ -348,7 +400,7 @@ class CUP$Sintactico$actions {
           return CUP$Sintactico$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 21: // METODOS_PARTICULAR ::= TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 METODOS_PARTICULAR 
+          case 26: // METODOS_PARTICULAR ::= TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 METODOS_PARTICULAR 
             {
               Object RESULT =null;
 

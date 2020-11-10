@@ -1272,7 +1272,8 @@ public void add(String nuevo) {
             // fall through
           case 110: break;
           case 37:
-            { 
+            { this.add("PAR O IMPAR");
+          return new Symbol(sym.TIPO_DATO);
             }
             // fall through
           case 111: break;
