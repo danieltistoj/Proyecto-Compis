@@ -1,8 +1,42 @@
-clase Impar 
-
+Clase Impar
 Propiedades Privada:
+
 Metodos Publico:
 
-Clase Algo
-Propiedades Privada:
-Metodos Publico:
+entero esImpar( entero numero )
+entero esImpar( entero numero, entero numero2)
+entero algo(entero algo2, entero algo3)
+Constructor()
+entero inicio()
+ejecutar algo(entero fasdfa, cadena fasf)
+cadena algo3(cadena algo4)
+cadena algo5(cadena algo, entero numero, entero numero2)
+Ejecutar algo6(entero alog)
+Ejecutar algodassf(entero dfaf, cadena fdaf, entero dfafd)
+entero fin(entero adfas, entero bdfas,cadena odfa)
+ejecutar tabla(entero algore, entero dfadf, cadena fadf, entero dfa)
+cadena jfsdf(entero algo,entero algoe, entero algos, cadena sfas)
+ejecutar aldsfasd8()
+ejecutar aldsfasd8(entero fasdfa, entero fdfa, cadena dfadfa)
+ejecutar aldsfasd8(entero dfad, entero dfa,entero dfafa)
+
+sfafd = "dfasf","dfsdf"
+sfafd = "dfasf","dfsdf"
+rrer = 2321+fda
+
+ejecutar aldsfasd8(entero fasdfa, entero fdfa, cadena dfadfa)
+sfafd = 213+123-fdaf/fsfs*33
+ejecutar aldsfasd8(entero dfad, entero dfa,entero dfafa)
+ejecutar aldsfasd8(entero fasdfa, entero fdfa, cadena dfadfa)
+ejecutar aldsfasd8(entero dfad, entero dfa,entero dfafa)
+sfafd = 213+123-fdaf/fsfs*33
+ejecutar aldsfasd8()
+ejecutar aldsfasd8()
+sfafd = "dfasf","dfsdf"
+sfafd = "dfasf","dfsdf"
+rrer = 2321+fda
+
+
+
+
+

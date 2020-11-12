@@ -23,7 +23,7 @@ public interface sym {
   public static final int PRINCIPAL = 13;
   public static final int AND = 25;
   public static final int IGUAL = 24;
-  public static final int SIGNOS = 57;
+  public static final int SIGNOS = 58;
   public static final int DISTINTO_QUE = 45;
   public static final int SINO = 7;
   public static final int OR = 26;
@@ -44,14 +44,16 @@ public interface sym {
   public static final int DECREMENTO = 18;
   public static final int error = 1;
   public static final int COMA = 23;
-  public static final int COMENTARIO = 60;
+  public static final int CADENA = 57;
+  public static final int COMENTARIO = 61;
   public static final int MODULO = 42;
   public static final int MENOS = 31;
   public static final int OPERADORES = 36;
   public static final int MAYOR_QUE = 44;
   public static final int TIPO_DATO = 35;
   public static final int VARIABLE_CLASE = 33;
-  public static final int FUNCION_ESPECIAL = 58;
+  public static final int FUNCION_ESPECIAL = 59;
+  public static final int NUMERO_DECIMAL = 64;
   public static final int METODOS = 4;
   public static final int TANGENTE = 51;
   public static final int PUNTO = 32;
@@ -62,13 +64,14 @@ public interface sym {
   public static final int IGUAL_QUE = 46;
   public static final int SENO = 49;
   public static final int CONSTRUCTOR = 11;
-  public static final int FUNCIONES_CLICLOS_ETC = 59;
+  public static final int FUNCIONES_CLICLOS_ETC = 60;
   public static final int EXPONENCIACION = 41;
   public static final int LEER = 8;
   public static final int HACER = 19;
-  public static final int SALTO_LINEA = 61;
+  public static final int SALTO_LINEA = 62;
   public static final int MENOR_QUE = 43;
   public static final int DIVISION = 40;
+  public static final int EJECUTAR = 63;
   public static final int MULTIPLICACION = 39;
   public static final String[] terminalNames = new String[] {
   "EOF",
@@ -128,11 +131,14 @@ public interface sym {
   "CADENA_A_BOOLEANO",
   "CADENA_A_REAL",
   "CADENA_A_ENTERO",
+  "CADENA",
   "SIGNOS",
   "FUNCION_ESPECIAL",
   "FUNCIONES_CLICLOS_ETC",
   "COMENTARIO",
-  "SALTO_LINEA"
+  "SALTO_LINEA",
+  "EJECUTAR",
+  "NUMERO_DECIMAL"
   };
 }
 

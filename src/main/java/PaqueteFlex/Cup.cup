@@ -18,8 +18,8 @@ terminal TIPO_DATO,OPERADORES;
 terminal SUMA, RESTA, MULTIPLICACION, DIVISION, EXPONENCIACION, MODULO;
 terminal MENOR_QUE, MAYOR_QUE, DISTINTO_QUE, IGUAL_QUE, INCREMENTAR, DECREMENTAR;
 terminal SENO, COSENO, TANGENTE, LOGARITMO, TIPO_DE_METODOS;
-terminal CADENA_A_BOOLEANO, CADENA_A_REAL, CADENA_A_ENTERO;
-terminal SIGNOS, FUNCION_ESPECIAL, FUNCIONES_CLICLOS_ETC,COMENTARIO,SALTO_LINEA;
+terminal CADENA_A_BOOLEANO, CADENA_A_REAL, CADENA_A_ENTERO, CADENA;
+terminal SIGNOS, FUNCION_ESPECIAL, FUNCIONES_CLICLOS_ETC,COMENTARIO,SALTO_LINEA,EJECUTAR, NUMERO_DECIMAL;
 
 
 
@@ -27,7 +27,8 @@ terminal SIGNOS, FUNCION_ESPECIAL, FUNCIONES_CLICLOS_ETC,COMENTARIO,SALTO_LINEA;
 non terminal S;
 non terminal CLASE_GENERAL, CLASE_PARTICULAR, VARIABLES_PROPIEDADES, VARIABLES_PROPIEDADES2;
 non terminal PROPIEDAD_CLASE, METODO_CLASE, METODOS_PARTICULAR;
-non terminal FINAL_DE_LINEA,SALTO;
+non terminal FINAL_DE_LINEA,SALTO,CODIGO_GENERAL,METODO_RETORNO, METODO_EJECUTAR;
+non terminal METODO_CODIGO, METODO_SINCODIGO,OPERACION, ASIGNACION, SIGNO_MATE,CONCATENACION;
 
 start with S;
 
@@ -55,18 +56,84 @@ PROPIEDAD_CLASE ::=        PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS
 VARIABLES_PROPIEDADES ::=  TIPO_DATO VARIABLE 
                            |TIPO_DATO VARIABLE VARIABLES_PROPIEDADES;
 
-VARIABLES_PROPIEDADES2 ::= TIPO_DATO VARIABLE  
-                           |TIPO_DATO VARIABLE COMA VARIABLES_PROPIEDADES2;
+
+
+/*
+No terminal, que indica los tipos de metodos, debe de
+iniciar con el no terminal "Metodo" seguido del tipo de
+metodo ["Publica"|"Publico"|"Privada"|"Privados"|"Protegidos"|"Protegidas"] seguido de
+dos puntos ":", luego puede ser recursivo o contener metodos particulares simples o con 
+recursividad
+*/
 
 METODO_CLASE ::=           METODOS TIPO_DE_METODOS DOS_PUNTOS METODOS_PARTICULAR  
                            |METODOS TIPO_DE_METODOS DOS_PUNTOS METODOS_PARTICULAR METODO_CLASE
-                           |METODOS TIPO_DE_METODOS DOS_PUNTOS;
+                           |METODOS TIPO_DE_METODOS DOS_PUNTOS
+                           ;
+/*
+Gramatica de un metodo en concreto, pueden ser metodos que retornen un valor
+por lo tanto llevaran un tipo de dato en el inicio o no retornar un valor, por lo 
+tanto debe de llevar un "ejecutar"|"Ejecutar" equivalente a un void
+*/
+                                                                                                                  /*los valores que inician con un tipo de dato deben de retornar algun valor, los que tiene un ejecutar no*/
+METODOS_PARTICULAR ::=      METODO_RETORNO 
+                            |METODO_EJECUTAR
+                            |METODO_RETORNO METODOS_PARTICULAR
+                            |METODO_EJECUTAR METODOS_PARTICULAR
+                            ;
 
-METODOS_PARTICULAR ::=     TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 
-                           |TIPO_DATO PARENTESIS1 PARENTESIS2  METODOS_PARTICULAR
-                           |TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 
-                           |TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 METODOS_PARTICULAR    
-                           |TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 METODOS_PARTICULAR;
+                            /*Gramatica para metodo que devuelve un valor*/
 
+METODO_RETORNO ::=          TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2                                                                           
+                            |TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2    
+                            |TIPO_DATO PARENTESIS1 PARENTESIS2 
+                            ;
+
+                            /*Gramatica para metodo que no necesita devolver un valor*/
+
+METODO_EJECUTAR ::=        EJECUTAR VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2                      
+                           |EJECUTAR VARIABLE PARENTESIS1 PARENTESIS2
+                           |EJECUTAR VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 CODIGO_GENERAL
+                           |EJECUTAR VARIABLE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL
+                           ;
+                           
+                           /*Gramatica para distintas instrucciones de codigo general*/
+
+CODIGO_GENERAL ::=         ASIGNACION
+                           |ASIGNACION CODIGO_GENERAL
+                           ;
+
+                           /*Declaracion de variables para codigo general*/
+
+VARIABLES_PROPIEDADES2 ::= TIPO_DATO VARIABLE  
+                           |TIPO_DATO VARIABLE COMA VARIABLES_PROPIEDADES2;
+
+
+ASIGNACION ::=              VARIABLE IGUAL OPERACION
+                            |VARIABLE IGUAL CONCATENACION
+                            ;
+
+SIGNO_MATE ::=              SUMA
+                            |RESTA
+                            |MULTIPLICACION
+                            |DIVISION
+                            ;
+
+CONCATENACION ::=            CADENA
+                            |CADENA COMA CONCATENACION
+                            ;
+
+/*
+Gramatica para operaciones matematicas 
+a+d-s/1+df-daf
+2
+fsf
+*/                            
+
+OPERACION  ::=              VARIABLE
+                            |NUMERO_DECIMAL
+                            |VARIABLE SIGNO_MATE OPERACION    
+                            |NUMERO_DECIMAL SIGNO_MATE OPERACION
+                            ;
 
 

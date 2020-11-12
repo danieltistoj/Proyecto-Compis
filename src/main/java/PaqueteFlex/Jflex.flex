@@ -118,6 +118,7 @@ public void add(String nuevo) {
     eliminar ="Eliminar"
     incluir = "incluir"
     nuevo = "nuevo"
+    ejecutar = "ejecutar"|"Ejecutar" /*Indica un metodo que no devuelve un valor equivalente a void*/
     
     /*Signos*/
     verdadero = "verdadero"
@@ -147,7 +148,7 @@ public void add(String nuevo) {
 
     /*   TIPOS DE DATOS  */
 
-    numeroDecimale = [1-9][0-9]* | 0
+    numeroDecimal = [1-9][0-9]* | 0
     numeroReal = [0-9]*[.][0-9]+[1-9]
     booleano = [verdadero|falso]
     cadena = ["\""]([a-zA-Z]*[0-9]*["\ "]*)*["\""]
@@ -344,7 +345,7 @@ public void add(String nuevo) {
     {igual}
         {   
             this.add("IGUAL");
-            return new Symbol(sym.SIGNOS);
+            return new Symbol(sym.IGUAL);
         }
 
     {exponente}
@@ -362,25 +363,25 @@ public void add(String nuevo) {
     {division}
         {   
             this.add("DIVISION");
-            return new Symbol(sym.SIGNOS);
+            return new Symbol(sym.DIVISION);
         }
 
     {multiplicacion}
         {   
             this.add("MULTIPLICACION");
-            return new Symbol(sym.SIGNOS);
+            return new Symbol(sym.MULTIPLICACION);
         }
 
     {resta}
         {   
             this.add("RESTA");
-            return new Symbol(sym.SIGNOS);
+            return new Symbol(sym.RESTA);
         }
 
     {suma}
         {   
-            this.add("RESTA");
-           return new Symbol(sym.SIGNOS);
+            this.add("SUMA");
+           return new Symbol(sym.SUMA);
         }
 
     {coma}
@@ -542,6 +543,11 @@ public void add(String nuevo) {
             return new Symbol(sym.TIPO_DE_METODOS);
             
         }
+    {ejecutar}
+        {
+           this.add("METODO EJECUTAR");
+           return new Symbol(sym.EJECUTAR);
+        }
     {tipo_clase} 
         { 
           this.add("PAR O IMPAR");
@@ -557,14 +563,16 @@ public void add(String nuevo) {
             this.add("NUMEROS REALES"); 
         }
 
-    {numeroDecimale}
+    {numeroDecimal}
         {  
             this.add("NUMEROS DECIMALES"); 
+            return new Symbol(sym.NUMERO_DECIMAL);
         }
 
     {cadena}
         {  
             this.add("TIPO_DATO_CUP"); 
+            return new Symbol(sym.CADENA);
         }
 
     {excepciones_variables_clase}
