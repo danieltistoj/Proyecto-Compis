@@ -64,11 +64,13 @@ public interface sym {
   public static final int IGUAL_QUE = 46;
   public static final int SENO = 49;
   public static final int CONSTRUCTOR = 11;
+  public static final int FALSO = 66;
   public static final int FUNCIONES_CLICLOS_ETC = 60;
   public static final int EXPONENCIACION = 41;
   public static final int LEER = 8;
   public static final int HACER = 19;
   public static final int SALTO_LINEA = 62;
+  public static final int VERDADERO = 65;
   public static final int MENOR_QUE = 43;
   public static final int DIVISION = 40;
   public static final int EJECUTAR = 63;
@@ -138,7 +140,9 @@ public interface sym {
   "COMENTARIO",
   "SALTO_LINEA",
   "EJECUTAR",
-  "NUMERO_DECIMAL"
+  "NUMERO_DECIMAL",
+  "VERDADERO",
+  "FALSO"
   };
 }
 

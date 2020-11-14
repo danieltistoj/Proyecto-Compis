@@ -20,6 +20,7 @@ terminal MENOR_QUE, MAYOR_QUE, DISTINTO_QUE, IGUAL_QUE, INCREMENTAR, DECREMENTAR
 terminal SENO, COSENO, TANGENTE, LOGARITMO, TIPO_DE_METODOS;
 terminal CADENA_A_BOOLEANO, CADENA_A_REAL, CADENA_A_ENTERO, CADENA;
 terminal SIGNOS, FUNCION_ESPECIAL, FUNCIONES_CLICLOS_ETC,COMENTARIO,SALTO_LINEA,EJECUTAR, NUMERO_DECIMAL;
+terminal VERDADERO, FALSO;
 
 
 
@@ -28,7 +29,7 @@ non terminal S;
 non terminal CLASE_GENERAL, CLASE_PARTICULAR, VARIABLES_PROPIEDADES, VARIABLES_PROPIEDADES2;
 non terminal PROPIEDAD_CLASE, METODO_CLASE, METODOS_PARTICULAR;
 non terminal FINAL_DE_LINEA,SALTO,CODIGO_GENERAL,METODO_RETORNO, METODO_EJECUTAR;
-non terminal METODO_CODIGO, METODO_SINCODIGO,OPERACION, ASIGNACION, SIGNO_MATE,CONCATENACION;
+non terminal METODO_CODIGO, METODO_SINCODIGO,OPERACION, ASIGNACION, SIGNO_MATE,CONCATENACION, LOGICO,LEER_ESCRIBIR;
 
 start with S;
 
@@ -75,7 +76,9 @@ Gramatica de un metodo en concreto, pueden ser metodos que retornen un valor
 por lo tanto llevaran un tipo de dato en el inicio o no retornar un valor, por lo 
 tanto debe de llevar un "ejecutar"|"Ejecutar" equivalente a un void
 */
-                                                                                                                  /*los valores que inician con un tipo de dato deben de retornar algun valor, los que tiene un ejecutar no*/
+          
+                            /*Gramatica que indica el tipo de metodo*/   
+                                                                                                     /*los valores que inician con un tipo de dato deben de retornar algun valor, los que tiene un ejecutar no*/
 METODOS_PARTICULAR ::=      METODO_RETORNO 
                             |METODO_EJECUTAR
                             |METODO_RETORNO METODOS_PARTICULAR
@@ -100,6 +103,8 @@ METODO_EJECUTAR ::=        EJECUTAR VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 
                            /*Gramatica para distintas instrucciones de codigo general*/
 
 CODIGO_GENERAL ::=         ASIGNACION
+                           |LEER_ESCRIBIR
+                           |LEER_ESCRIBIR CODIGO_GENERAL
                            |ASIGNACION CODIGO_GENERAL
                            ;
 
@@ -108,18 +113,32 @@ CODIGO_GENERAL ::=         ASIGNACION
 VARIABLES_PROPIEDADES2 ::= TIPO_DATO VARIABLE  
                            |TIPO_DATO VARIABLE COMA VARIABLES_PROPIEDADES2;
 
+                            /*
+                            Gramatica de alguna variable que se iguala a algo. var = operacion, var = cadena | cadena concatenada, var falso | vedadero
+                            */
 
 ASIGNACION ::=              VARIABLE IGUAL OPERACION
                             |VARIABLE IGUAL CONCATENACION
+                            |VARIABLE IGUAL LOGICO
                             ;
 
-SIGNO_MATE ::=              SUMA
-                            |RESTA
-                            |MULTIPLICACION
-                            |DIVISION
+LEER_ESCRIBIR ::=          ESCRIBIR OPERACION
+                           |ESCRIBIR CONCATENACION
+                           |LEER VARIABLE
+                           ;
+                             
+
+LOGICO ::=                 VERDADERO /*Terminal "verdadero"*/
+                            |FALSO   /*Terminal "falso"*/
                             ;
 
-CONCATENACION ::=            CADENA
+SIGNO_MATE ::=              SUMA                    /*Terminal "+"   */
+                            |RESTA                  /*Terminal "-"   */
+                            |MULTIPLICACION         /*Terminal "*"  */
+                            |DIVISION               /*Terminal "/"  */
+                            ;
+
+CONCATENACION ::=           CADENA 
                             |CADENA COMA CONCATENACION
                             ;
 

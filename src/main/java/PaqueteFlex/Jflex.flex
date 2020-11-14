@@ -404,12 +404,12 @@ public void add(String nuevo) {
     {falso} 
         {
             this.add("FALSO");
-            return new Symbol(sym.SIGNOS);
+            return new Symbol(sym.FALSO);
         }
     {verdadero} 
         {
            this.add("VERDADERO");
-           return new Symbol(sym.SIGNOS);
+           return new Symbol(sym.VERDADERO);
         }
 
     {tabulacion}
@@ -497,11 +497,13 @@ public void add(String nuevo) {
     {escribir}
         {  
             this.add("ESCRIBIR"); 
+            return new Symbol(sym.ESCRIBIR);
         }
 
     {leer}
         {  
             this.add("LEER"); 
+            return new Symbol(sym.LEER);
         }
 
     {sino}
