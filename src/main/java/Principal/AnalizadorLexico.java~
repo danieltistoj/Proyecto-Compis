@@ -1109,7 +1109,7 @@ public void add(String nuevo) {
           case 80: break;
           case 6:
             { this.add("MODULO");
-            return new Symbol(sym.SIGNOS);
+            return new Symbol(sym.MODULO);
             }
             // fall through
           case 81: break;
@@ -1268,6 +1268,7 @@ public void add(String nuevo) {
           case 107: break;
           case 33:
             { this.add("IF");
+            return new Symbol(sym.IF);
             }
             // fall through
           case 108: break;
@@ -1325,6 +1326,7 @@ public void add(String nuevo) {
           case 117: break;
           case 43:
             { this.add("SINO");
+            return new Symbol(sym.SINO);
             }
             // fall through
           case 118: break;
@@ -1336,7 +1338,7 @@ public void add(String nuevo) {
           case 119: break;
           case 45:
             { this.add("DESDE"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.DESDE);
             }
             // fall through
           case 120: break;
@@ -1348,13 +1350,13 @@ public void add(String nuevo) {
           case 121: break;
           case 47:
             { this.add("HACER"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.HACER);
             }
             // fall through
           case 122: break;
           case 48:
             { this.add("NUEVO");  
-          return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+          return new Symbol(sym.NEW);
             }
             // fall through
           case 123: break;
@@ -1419,7 +1421,8 @@ public void add(String nuevo) {
             // fall through
           case 133: break;
           case 59:
-            { this.add("ENCONCES");
+            { this.add("ENCONCES"); 
+            return new Symbol(sym.ENTONCES);
             }
             // fall through
           case 134: break;
@@ -1437,7 +1440,7 @@ public void add(String nuevo) {
           case 136: break;
           case 62:
             { this.add("MIENTRAS"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.MIENTRAS);
             }
             // fall through
           case 137: break;
@@ -1497,13 +1500,13 @@ public void add(String nuevo) {
           case 146: break;
           case 72:
             { this.add("DECREMAR"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.DECREMENTAR);
             }
             // fall through
           case 147: break;
           case 73:
             { this.add("INCREMENTAR"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.INCREMENTAR);
             }
             // fall through
           case 148: break;

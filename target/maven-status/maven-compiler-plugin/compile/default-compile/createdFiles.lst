@@ -1,5 +1,8 @@
+compiladorloop\sym.class
 Principal\EscribirenFichero.class
+compiladorloop\Sintactico$CUP$Sintactico$actions.class
 Principal\Sintactico.class
+compiladorloop\Sintactico.class
 Principal\Simbolos.class
 Principal\sym.class
 Principal\AnalizadorLexico.class

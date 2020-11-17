@@ -20,7 +20,7 @@ terminal MENOR_QUE, MAYOR_QUE, DISTINTO_QUE, IGUAL_QUE, INCREMENTAR, DECREMENTAR
 terminal SENO, COSENO, TANGENTE, LOGARITMO, TIPO_DE_METODOS;
 terminal CADENA_A_BOOLEANO, CADENA_A_REAL, CADENA_A_ENTERO, CADENA;
 terminal SIGNOS, FUNCION_ESPECIAL, FUNCIONES_CLICLOS_ETC,COMENTARIO,SALTO_LINEA,EJECUTAR, NUMERO_DECIMAL;
-terminal VERDADERO, FALSO;
+terminal VERDADERO, FALSO, NEW;
 
 
 
@@ -31,6 +31,9 @@ non terminal PROPIEDAD_CLASE, METODO_CLASE, METODOS_PARTICULAR;
 non terminal FINAL_DE_LINEA,SALTO,CODIGO_GENERAL,METODO_RETORNO, METODO_EJECUTAR;
 non terminal METODO_CODIGO, METODO_SINCODIGO,OPERACION, ASIGNACION, SIGNO_MATE,CONCATENACION, LOGICO,LEER_ESCRIBIR;
 non terminal DEVOLVER_METODO;
+non terminal CONDICION, CODIGO_CONDICION, SINO_GENERAL;
+non terminal CICLO_FOR, CICLO_DO_WHILE, DECLARAR_FOR;
+non terminal INSTANCIAR_CLASE, FUNCIONES;
 
 start with S;
 
@@ -114,12 +117,17 @@ CODIGO_GENERAL ::=         ASIGNACION
                            |LEER_ESCRIBIR
                            |LEER_ESCRIBIR CODIGO_GENERAL
                            |ASIGNACION CODIGO_GENERAL
+                           |CONDICION
+                           |CICLO_FOR
+                           |INSTANCIAR_CLASE
                            ;
 
                            /*Declaracion de variables para codigo general*/
 
 VARIABLES_PROPIEDADES2 ::= TIPO_DATO VARIABLE  
-                           |TIPO_DATO VARIABLE COMA VARIABLES_PROPIEDADES2;
+                           |TIPO_DATO VARIABLE COMA VARIABLES_PROPIEDADES2
+                           |TIPO_DATO VARIABLE IGUAL OPERACION
+                           ;
 
                             /*
                             Gramatica de alguna variable que se iguala a algo. var = operacion, var = cadena | cadena concatenada, var falso | vedadero
@@ -144,10 +152,12 @@ SIGNO_MATE ::=              SUMA                    /*Terminal "+"   */
                             |RESTA                  /*Terminal "-"   */
                             |MULTIPLICACION         /*Terminal "*"  */
                             |DIVISION               /*Terminal "/"  */
+                            |MODULO                /*Terminal "%"  */
                             ;
 
 CONCATENACION ::=           CADENA 
                             |CADENA COMA CONCATENACION
+                            |CADENA COMA OPERACION
                             ;
 
 /*
@@ -162,5 +172,36 @@ OPERACION  ::=              VARIABLE
                             |VARIABLE SIGNO_MATE OPERACION    
                             |NUMERO_DECIMAL SIGNO_MATE OPERACION
                             ;
+
+/*
+    CONDICIONES DEL IF
+*/
+CONDICION  ::=              IF CODIGO_CONDICION ENTONCES CODIGO_GENERAL DEVOLVER_METODO SINO_GENERAL
+                            | IF CODIGO_CONDICION ENTONCES CODIGO_GENERAL SINO_GENERAL
+                            ;
+
+
+CODIGO_CONDICION ::=        OPERACION
+                            | VARIABLE SIGNOS NUMERO_DECIMAL
+                            ;
+
+SINO_GENERAL ::=             SINO CODIGO_CONDICION ENTONCES CODIGO_GENERAL  DEVOLVER_METODO SINO_GENERAL
+                            |SINO CODIGO_CONDICION ENTONCES CODIGO_GENERAL  SINO_GENERAL
+                            |SINO CODIGO_GENERAL
+                            |SINO
+                            ;
+
+CICLO_FOR    ::=           DESDE VARIABLES_PROPIEDADES2 MIENTRAS CODIGO_CONDICION INCREMENTAR NUMERO_DECIMAL HACER CODIGO_GENERAL
+                           |HACER CODIGO_GENERAL MIENTRAS CODIGO_CONDICION CODIGO_GENERAL
+                           |DESDE VARIABLES_PROPIEDADES2 MIENTRAS CODIGO_CONDICION INCREMENTAR NUMERO_DECIMAL HACER
+                           |HACER CODIGO_GENERAL MIENTRAS CODIGO_CONDICION
+                           ;
+
+INSTANCIAR_CLASE ::=       VARIABLE_CLASE VARIABLE IGUAL NEW VARIABLE_CLASE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL
+                           |VARIABLE_CLASE VARIABLE IGUAL NEW VARIABLE_CLASE PARENTESIS1 PARENTESIS2
+                           |VARIABLE SIGNOS VARIABLE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL
+                           |VARIABLE SIGNOS VARIABLE PARENTESIS1 PARENTESIS2
+                           ;
+
 
 

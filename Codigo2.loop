@@ -20,6 +20,7 @@ dghf = "fgs","ghh"
 devolver fdfdsa
 cadena algo5(cadena algo, entero numero, entero numero2)
 devolver "dfadf","zdfa"
+
 Ejecutar algo6(entero alog)
 escribir dfasa
 escribir dfa
@@ -28,8 +29,29 @@ rrer = falso
 fdafas = verdadero
 escribir "dsa"
 escribir dfa+3123+fdsf
-escribir "fdadf","fas"
+escribir "fdadf",rrer
 leer fadf
+
+desde entero i = 0 mientras i < 5 incrementar 2 hacer
+escribir i
+
+hacer
+ osdfs=5+b
+ sdfab=asdf%4
+mientras fadsb < 10
+
+si numero % 2 entonces
+escribir dfa+3123+fdsf
+devolver 0
+sino
+escribir dfa+3123+fdsf
+
+HolaMundo hola = nuevo HolaMundo ()
+hola.inicio ()
+
+
+
+
 
 
 

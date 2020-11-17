@@ -157,7 +157,7 @@ public void add(String nuevo) {
     /*   REGLAS EXTRAS */
 
     tabulacion = ["\ "]{4}|\t
-    variables = [a-z]+{reglas_variablesextra}
+    variables = [a-z]+{reglas_variablesextra} | [a-z]
     reglas_variablesextra = [[a-z]|[0-9]|[A-Z]]*|[[a-z]|[0-9]|[A-Z]]* "_" [[a-z]|[0-9]|[A-Z]]+
     excepciones_variables = [a-z]+[[a-z]|[0-9]|[A-Z]]* "_"  | [A-Z]+ {variables}
     variables_clase = [A-Z]+{reglas_variablesextra}
@@ -194,7 +194,7 @@ public void add(String nuevo) {
     {nuevo}
         {   
           this.add("NUEVO");  
-          return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+          return new Symbol(sym.NEW);
         }
 
     {tipo_booleano}
@@ -357,7 +357,7 @@ public void add(String nuevo) {
     {modulo}
         {   
             this.add("MODULO");
-            return new Symbol(sym.SIGNOS);
+            return new Symbol(sym.MODULO);
         }
 
     {division}
@@ -437,31 +437,31 @@ public void add(String nuevo) {
     {hacer}
         {  
             this.add("HACER"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.HACER);
         }
 
     {decrementar}
         {  
             this.add("DECREMAR"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.DECREMENTAR);
         }
 
     {incrementar}
         {  
             this.add("INCREMENTAR"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.INCREMENTAR);
         }
 
     {mientras}
         {  
             this.add("MIENTRAS"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.MIENTRAS);
         }
 
     {desde}
         {  
             this.add("DESDE"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.DESDE);
         }
 
     {instanciar}
@@ -508,17 +508,20 @@ public void add(String nuevo) {
 
     {sino}
         {  
-            this.add("SINO"); 
+            this.add("SINO");
+            return new Symbol(sym.SINO);
         }
 
     {entonces}
         {  
             this.add("ENCONCES"); 
+            return new Symbol(sym.ENTONCES);
         }
 
     {if}
         {  
-            this.add("IF"); 
+            this.add("IF");
+            return new Symbol(sym.IF);
         }
 
     {clase}
