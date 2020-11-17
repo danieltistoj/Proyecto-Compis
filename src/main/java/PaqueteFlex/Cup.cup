@@ -30,6 +30,7 @@ non terminal CLASE_GENERAL, CLASE_PARTICULAR, VARIABLES_PROPIEDADES, VARIABLES_P
 non terminal PROPIEDAD_CLASE, METODO_CLASE, METODOS_PARTICULAR;
 non terminal FINAL_DE_LINEA,SALTO,CODIGO_GENERAL,METODO_RETORNO, METODO_EJECUTAR;
 non terminal METODO_CODIGO, METODO_SINCODIGO,OPERACION, ASIGNACION, SIGNO_MATE,CONCATENACION, LOGICO,LEER_ESCRIBIR;
+non terminal DEVOLVER_METODO;
 
 start with S;
 
@@ -87,9 +88,16 @@ METODOS_PARTICULAR ::=      METODO_RETORNO
 
                             /*Gramatica para metodo que devuelve un valor*/
 
-METODO_RETORNO ::=          TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2                                                                           
-                            |TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2    
+METODO_RETORNO ::=          TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 DEVOLVER_METODO                                                                         
+                            |TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 DEVOLVER_METODO   
                             |TIPO_DATO PARENTESIS1 PARENTESIS2 
+                            |TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL DEVOLVER_METODO                                                                         
+                            |TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 CODIGO_GENERAL DEVOLVER_METODO   
+                            |TIPO_DATO PARENTESIS1 PARENTESIS2 CODIGO_GENERAL
+                            ;
+
+DEVOLVER_METODO ::=         DEVOLVER OPERACION
+                            |DEVOLVER CONCATENACION
                             ;
 
                             /*Gramatica para metodo que no necesita devolver un valor*/
@@ -129,7 +137,7 @@ LEER_ESCRIBIR ::=          ESCRIBIR OPERACION
                              
 
 LOGICO ::=                 VERDADERO /*Terminal "verdadero"*/
-                            |FALSO   /*Terminal "falso"*/
+                           |FALSO   /*Terminal "falso"*/
                             ;
 
 SIGNO_MATE ::=              SUMA                    /*Terminal "+"   */

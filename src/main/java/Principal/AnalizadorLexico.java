@@ -1414,7 +1414,7 @@ public void add(String nuevo) {
           case 132: break;
           case 58:
             { this.add("DEVOLVER"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.DEVOLVER);
             }
             // fall through
           case 133: break;

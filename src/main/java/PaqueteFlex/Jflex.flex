@@ -491,7 +491,7 @@ public void add(String nuevo) {
     {devolver}
         {  
             this.add("DEVOLVER"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.DEVOLVER);
         }
 
     {escribir}

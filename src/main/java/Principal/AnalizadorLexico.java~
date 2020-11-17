@@ -1295,7 +1295,8 @@ public void add(String nuevo) {
             // fall through
           case 112: break;
           case 38:
-            { this.add("LEER");
+            { this.add("LEER"); 
+            return new Symbol(sym.LEER);
             }
             // fall through
           case 113: break;
@@ -1413,7 +1414,7 @@ public void add(String nuevo) {
           case 132: break;
           case 58:
             { this.add("DEVOLVER"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.DEVOLVER);
             }
             // fall through
           case 133: break;
@@ -1423,7 +1424,8 @@ public void add(String nuevo) {
             // fall through
           case 134: break;
           case 60:
-            { this.add("ESCRIBIR");
+            { this.add("ESCRIBIR"); 
+            return new Symbol(sym.ESCRIBIR);
             }
             // fall through
           case 135: break;

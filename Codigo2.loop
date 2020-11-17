@@ -1,16 +1,25 @@
 Clase Impar
 Propiedades Privada:
-
+entero dfadf
+cadena sfgs
 Metodos Publico:
 
 entero esImpar( entero numero )
+devolver dsf
 entero esImpar( entero numero, entero numero2)
+devolver dfe
 entero algo(entero algo2, entero algo3)
+devolver dfasd
 Constructor()
 entero inicio()
+devolver fdfdsw
 ejecutar algo(entero fasdfa, cadena fasf)
 cadena algo3(cadena algo4)
+dsfasd = dfa+2
+dghf = "fgs","ghh"
+devolver fdfdsa
 cadena algo5(cadena algo, entero numero, entero numero2)
+devolver "dfadf","zdfa"
 Ejecutar algo6(entero alog)
 escribir dfasa
 escribir dfa
