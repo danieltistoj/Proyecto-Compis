@@ -1,7 +1,8 @@
 Clase Impar
 Propiedades Privada:
-entero dfadf
-cadena sfgs
+entero dfasd,asdfa
+entero fsaf
+entero asdf,fasdfa,fdasdf
 Metodos Publico:
 
 entero esImpar( entero numero )
