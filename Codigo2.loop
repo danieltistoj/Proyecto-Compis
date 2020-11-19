@@ -1,61 +1,32 @@
+/*área de inclusión de bibliotecas externas*/
 Clase Impar
 Propiedades Privada:
-entero dfasd,asdfa
-entero fsaf
-entero asdf,fasdfa,fdasdf
+Propiedades Privada:
+Propiedades Publica:
 Metodos Publico:
-
-entero esImpar( entero numero )
-devolver dsf
-entero esImpar( entero numero, entero numero2)
-devolver dfe
-entero algo(entero algo2, entero algo3)
-devolver dfasd
-Constructor()
-entero inicio()
-devolver fdfdsw
-ejecutar algo(entero fasdfa, cadena fasf)
-cadena algo3(cadena algo4)
-dsfasd = dfa+2
-dghf = "fgs","ghh"
-devolver fdfdsa
-cadena algo5(cadena algo, entero numero, entero numero2)
-devolver "dfadf","zdfa"
-
-Ejecutar algo6(entero alog)
-escribir dfasa
-escribir dfa
-sfafd = "dfasf","dfsdf"
-rrer = falso
-fdafas = verdadero
-escribir "dsa"
-escribir dfa+3123+fdsf
-escribir "fdadf",rrer
-leer fadf
-
-desde entero i = 0 mientras i < 5 incrementar 2 hacer
-escribir i
-
-hacer
- osdfs=5+b
- sdfab=asdf%4
-mientras fadsb < 10
-
+entero esImpar(entero numero)
 si numero % 2 entonces
-escribir dfa+3123+fdsf
-devolver 0
+devolver 2
 sino
-escribir dfa+3123+fdsf
+devolver 0
 
-HolaMundo hola = nuevo HolaMundo ()
-hola.inicio ()
+Metodos Privados:
 
+Clase HolaMundo
 
+Propiedades Privada:
+    entero aux1
+    cadena nombre
+    Impar aux2
+    Metodos Publico:
+    Constructor()
+    aux3 = nuevo Impar()
+    aux4 = 5
+    nombre = ""
+    devolver aux2.esImpar(aux1)
+cadena getNombre()
+      devolver nombre
 
+  
 
-
-
-
-
-
-
+     

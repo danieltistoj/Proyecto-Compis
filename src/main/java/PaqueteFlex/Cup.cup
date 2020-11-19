@@ -34,6 +34,7 @@ non terminal DEVOLVER_METODO;
 non terminal CONDICION, CODIGO_CONDICION, SINO_GENERAL;
 non terminal CICLO_FOR, CICLO_DO_WHILE, DECLARAR_FOR;
 non terminal INSTANCIAR_CLASE, FUNCIONES,VARIABLES,VARIABLE_REPETIDAS;
+non terminal IGUAL_CLASE,METODOS_OBJETOS;
 
 start with S;
 
@@ -56,6 +57,7 @@ CLASE_PARTICULAR ::=       CLASE VARIABLE_CLASE                               /*
 PROPIEDAD_CLASE ::=        PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS
                            |PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS VARIABLES_PROPIEDADES 
                            |PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS VARIABLES_PROPIEDADES PROPIEDAD_CLASE
+                           |PROPIEDADES TIPO_DE_METODOS DOS_PUNTOS PROPIEDAD_CLASE
                             ;
 /*declaracion de variables con su tipo de dato: entero variable o entero variable1, variable2*/
 
@@ -87,9 +89,9 @@ tanto debe de llevar un "ejecutar"|"Ejecutar" equivalente a un void
           
                             /*Gramatica que indica el tipo de metodo*/   
                                                                                                      /*los valores que inician con un tipo de dato deben de retornar algun valor, los que tiene un ejecutar no*/
-METODOS_PARTICULAR ::=      METODO_RETORNO 
+METODOS_PARTICULAR ::=      METODO_RETORNO {:System.out.println("metodo re 1");:}
                             |METODO_EJECUTAR
-                            |METODO_RETORNO METODOS_PARTICULAR
+                            |METODO_RETORNO METODOS_PARTICULAR {:System.out.println("metodo re 2");:}
                             |METODO_EJECUTAR METODOS_PARTICULAR
                             ;
 
@@ -97,14 +99,17 @@ METODOS_PARTICULAR ::=      METODO_RETORNO
 
 METODO_RETORNO ::=          TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 DEVOLVER_METODO                                                                         
                             |TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 DEVOLVER_METODO   
-                            |TIPO_DATO PARENTESIS1 PARENTESIS2 
+                            |TIPO_DATO PARENTESIS1 PARENTESIS2 {:System.out.println("Entro constructor");:}
                             |TIPO_DATO VARIABLE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL DEVOLVER_METODO                                                                         
                             |TIPO_DATO VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 CODIGO_GENERAL DEVOLVER_METODO   
-                            |TIPO_DATO PARENTESIS1 PARENTESIS2 CODIGO_GENERAL
+                            |TIPO_DATO PARENTESIS1 PARENTESIS2 CODIGO_GENERAL {:System.out.println("Entro constructor");:}/*constructor*/
+                            |TIPO_DATO PARENTESIS1 PARENTESIS2 CODIGO_GENERAL DEVOLVER_METODO
+                            |TIPO_DATO PRINCIPAL PARENTESIS1 PARENTESIS2 CODIGO_GENERAL 
                             ;
 
 DEVOLVER_METODO ::=         DEVOLVER OPERACION
                             |DEVOLVER CONCATENACION
+                            |DEVOLVER METODOS_OBJETOS
                             ;
 
                             /*Gramatica para metodo que no necesita devolver un valor*/
@@ -114,7 +119,7 @@ METODO_EJECUTAR ::=        EJECUTAR VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 
                            |EJECUTAR VARIABLE PARENTESIS1 VARIABLES_PROPIEDADES2 PARENTESIS2 CODIGO_GENERAL
                            |EJECUTAR VARIABLE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL
                            ;
-                           
+                    
                            /*Gramatica para distintas instrucciones de codigo general*/
 
 CODIGO_GENERAL ::=         ASIGNACION
@@ -180,20 +185,17 @@ OPERACION  ::=              VARIABLE
 /*
     CONDICIONES DEL IF
 */
-CONDICION  ::=              IF CODIGO_CONDICION ENTONCES CODIGO_GENERAL DEVOLVER_METODO SINO_GENERAL
-                            | IF CODIGO_CONDICION ENTONCES CODIGO_GENERAL SINO_GENERAL
+CONDICION  ::=              IF CODIGO_CONDICION ENTONCES CODIGO_GENERAL DEVOLVER_METODO SINO
+                            |IF CODIGO_CONDICION ENTONCES CODIGO_GENERAL SINO
+                            |IF CODIGO_CONDICION ENTONCES DEVOLVER_METODO SINO
                             ;
 
 
 CODIGO_CONDICION ::=        OPERACION
-                            | VARIABLE SIGNOS NUMERO_DECIMAL
+                            |VARIABLE SIGNOS NUMERO_DECIMAL
                             ;
 
-SINO_GENERAL ::=             SINO CODIGO_CONDICION ENTONCES CODIGO_GENERAL  DEVOLVER_METODO SINO_GENERAL
-                            |SINO CODIGO_CONDICION ENTONCES CODIGO_GENERAL  SINO_GENERAL
-                            |SINO CODIGO_GENERAL
-                            |SINO
-                            ;
+
 
 CICLO_FOR    ::=           DESDE VARIABLES_PROPIEDADES2 MIENTRAS CODIGO_CONDICION INCREMENTAR NUMERO_DECIMAL HACER CODIGO_GENERAL
                            |HACER CODIGO_GENERAL MIENTRAS CODIGO_CONDICION CODIGO_GENERAL
@@ -201,11 +203,17 @@ CICLO_FOR    ::=           DESDE VARIABLES_PROPIEDADES2 MIENTRAS CODIGO_CONDICIO
                            |HACER CODIGO_GENERAL MIENTRAS CODIGO_CONDICION
                            ;
 
-INSTANCIAR_CLASE ::=       VARIABLE_CLASE VARIABLE IGUAL NEW VARIABLE_CLASE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL
-                           |VARIABLE_CLASE VARIABLE IGUAL NEW VARIABLE_CLASE PARENTESIS1 PARENTESIS2
-                           |VARIABLE SIGNOS VARIABLE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL
-                           |VARIABLE SIGNOS VARIABLE PARENTESIS1 PARENTESIS2
+INSTANCIAR_CLASE ::=       VARIABLE_CLASE VARIABLE IGUAL NEW VARIABLE_CLASE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL {:System.out.println("1");:}
+                           |VARIABLE_CLASE VARIABLE IGUAL NEW VARIABLE_CLASE PARENTESIS1 PARENTESIS2 {:System.out.println("2");:}
+                           |VARIABLE IGUAL NEW VARIABLE_CLASE PARENTESIS1 PARENTESIS2 CODIGO_GENERAL {:System.out.println("3");:}
+                           |VARIABLE IGUAL NEW VARIABLE_CLASE PARENTESIS1 PARENTESIS2  {:System.out.println("4");:}
+                           |VARIABLE IGUAL NEW TIPO_DATO PARENTESIS1 PARENTESIS2 CODIGO_GENERAL {:System.out.println("3");:}
+                           |VARIABLE IGUAL NEW TIPO_DATO PARENTESIS1 PARENTESIS2  {:System.out.println("4");:}
                            ;
+
+METODOS_OBJETOS ::=        VARIABLE SIGNOS VARIABLE PARENTESIS1 VARIABLE_REPETIDAS PARENTESIS2  /*metodo de un objeto*/
+                           |VARIABLE SIGNOS PARENTESIS1 PARENTESIS2 /*llamar metodo*/ 
+                           ;                            
 
 
 

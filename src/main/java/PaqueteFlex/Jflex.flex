@@ -78,7 +78,7 @@ public void add(String nuevo) {
 /*  PALABRAS RESERVADAS  */
 
     clase = "clase" | "Clase"
-    propiedades = "Propiedades"
+    propiedades = "Propiedades"|"propiedades"
     metodos = "Metodos"
     tipo_de_metodos = "Publica"|"Publico"|"Privada"|"Privados"|"Protegidos"|"Protegidas"
     tipo_clase = "Impar"|"Par"
@@ -107,7 +107,7 @@ public void add(String nuevo) {
     devolver = "devolver"
     constructor = "Constructor"
     destructor = "Destructor"
-    principal = "principal"
+    principal = "Principal"
     instanciar = "instanciar"
     desde = "desde"
     mientras = "mientras"
@@ -145,6 +145,7 @@ public void add(String nuevo) {
     corchete1 = "["
     corchete2 = "]"
     punto = "."
+    caracter_especial = "á"
 
     /*   TIPOS DE DATOS  */
 
@@ -152,7 +153,7 @@ public void add(String nuevo) {
     numeroReal = [0-9]*[.][0-9]+[1-9]
     booleano = [verdadero|falso]
     cadena = ["\""]([a-zA-Z]*[0-9]*["\ "]*)*["\""]
-    comentarios = ["$"]([a-zA-Z]|[0-9]|["\ "]|["="]|["+"]|["-"]|["*"]|["/"]|["%"]|["."]|["_"]|["("]|[")"]|["["]|["]"])*["$"]
+    comentarios = ["/*"]([a-zA-Z]|[0-9]|["\ "]|["="]|["+"]|["-"]|["*"]|["/"]|["%"]|["."]|["_"]|["("]|[")"]|["["]|["]"]|["á"]|["ó"])*["*/"]
 
     /*   REGLAS EXTRAS */
 
@@ -473,7 +474,7 @@ public void add(String nuevo) {
     {principal}
         {  
             this.add("PRINCIPAL"); 
-            return new Symbol(sym.FUNCIONES_CLICLOS_ETC);
+            return new Symbol(sym.PRINCIPAL);
         }
 
     {destructor}
